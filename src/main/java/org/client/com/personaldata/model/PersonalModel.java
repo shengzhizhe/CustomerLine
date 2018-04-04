@@ -187,4 +187,23 @@ public class PersonalModel implements Serializable {
         this.wechat = wechat;
         this.microblog = microblog;
     }
+
+    @Override
+    public String toString() {
+        return "PersonalModel{" +
+                "uuid='" + uuid + '\'' +
+                ", account='" + account + '\'' +
+                ", portrait='" + portrait + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", idno='" + idno + '\'' +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                ", qq='" + qq + '\'' +
+                ", wechat='" + wechat + '\'' +
+                ", microblog='" + microblog + '\'' +
+                '}';
+    }
 }

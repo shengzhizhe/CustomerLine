@@ -10,7 +10,6 @@ import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -69,11 +68,17 @@ public class MyAccessControlFilter extends AccessControlFilter {
 //        获取cookie
         Cookie[] cookies = httpServletRequest.getCookies();
         String token_str = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                token_str = cookies[i].getValue();
-                continue;
+        if (cookies != null) {
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals("token")) {
+                    token_str = cookies[i].getValue();
+                    continue;
+                }
             }
+        } else {
+            log.info("为获取到cookie");
+            onLoginFail(response, "非法的密匙");
+            return false;
         }
 //验证用户和令牌的有效性(此处应该根据uuid取缓存数据然后判断令牌时候有效)
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(null, "user", token_str);
@@ -121,9 +126,12 @@ public class MyAccessControlFilter extends AccessControlFilter {
     private void onLoginFail(ServletResponse response, String message) throws IOException {
         log.info("设置返回");
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        httpResponse.getWriter().write(message);
-        httpResponse.sendRedirect("/index");
+        httpResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        ResponseResult result = new ResponseResult();
+        result.setSuccess(false);
+        result.setMessage(message);
+        httpResponse.getWriter().write(result.toString());
+//        httpResponse.sendRedirect("/index");
     }
 
     /**

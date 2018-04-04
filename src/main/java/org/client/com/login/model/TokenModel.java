@@ -1,4 +1,4 @@
-package org.client.com.server.model;
+package org.client.com.login.model;
 
 import java.io.Serializable;
 

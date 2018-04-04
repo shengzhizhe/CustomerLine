@@ -1,16 +1,15 @@
 package org.client.com;
 
-import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.client.com.server.TokenInterface;
-import org.client.com.server.model.TokenModel;
-import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -21,8 +20,8 @@ public class MyShiroRealm extends AuthorizingRealm {
 
     private static final Logger log = LoggerFactory.getLogger(MyShiroRealm.class);
 
-    @Autowired
-    private TokenInterface tkInterface;
+//    @Autowired
+//    private TokenServiceImpl tokenService;
 
     @Override
     public String getName() {
@@ -33,45 +32,45 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
-        MyUsernamePasswordToken myToken = (MyUsernamePasswordToken) token;
-        if (myToken.getSignature() == null || myToken.getSignature().isEmpty()) {
-            //请从新登录;
-            log.info("令牌为空");
-            throw new UnknownAccountException();
-        }
-        ResponseResult<TokenModel> result = tkInterface.getByToken(myToken.getSignature());
-        if (result.isSuccess()) {
-//            如果token存在判断是否过期
-            long now_times = System.currentTimeMillis();
-            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
-//                密钥过期,请从新登录;
-                log.info("令牌过期");
-                throw new UnknownAccountException();
-            }
-
-//            判断是否是作废的令牌
-            if (result.getData().getIsUse().equals("Y")) {
-//                令牌已作废
-                log.info("令牌已用过");
-                throw new UnknownAccountException();
-            }
-            myToken.setUsername(result.getData().getAccount());
-            return new SimpleAuthenticationInfo(
-                    myToken,
-                    myToken.getSignature(),
-                    getName()
-            );
-        } else {
-            if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
-                return new SimpleAuthenticationInfo(
-                        myToken,
-                        myToken.getSignature(),
-                        getName()
-                );
-            } else
-                //请从新登录;
-                throw new UnknownAccountException();
-        }
+//        MyUsernamePasswordToken myToken = (MyUsernamePasswordToken) token;
+//        if (myToken.getSignature() == null || myToken.getSignature().isEmpty()) {
+//            //请从新登录;
+//            log.info("令牌为空");
+//            throw new UnknownAccountException();
+//        }
+//        ResponseResult<TokenModel> result = tokenService.getByToken(myToken.getSignature());
+//        if (result.isSuccess()) {
+////            如果token存在判断是否过期
+//            long now_times = System.currentTimeMillis();
+//            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
+////                密钥过期,请从新登录;
+//                log.info("令牌过期");
+//                throw new UnknownAccountException();
+//            }
+//
+////            判断是否是作废的令牌
+//            if (result.getData().getIsUse().equals("Y")) {
+////                令牌已作废
+//                log.info("令牌已用过");
+//                throw new UnknownAccountException();
+//            }
+//            myToken.setUsername(result.getData().getAccount());
+//            return new SimpleAuthenticationInfo(
+//                    myToken,
+//                    myToken.getSignature(),
+//                    getName()
+//            );
+//        } else {
+//            if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
+//                return new SimpleAuthenticationInfo(
+//                        myToken,
+//                        myToken.getSignature(),
+//                        getName()
+//                );
+//            } else
+        //请从新登录;
+        throw new UnknownAccountException();
+//        }
     }
 
 
@@ -85,7 +84,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         // 权限信息对象info,用来存放查出的用户的所有的角色（role）及权限（permission）
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         //这里赋给两个不存在的值，使controller中的权限验证失败，验证在此失败会继续进入myShiroRealm2验证权限
-        info.addRole("admin");
+//        info.addRole("admin");
 //        for(Permission permission: permissions){
 //            System.out.println("permission:"+permission.getPermission());
 //            System.out.println("permission.getRoleName():"+permission.getRoleName());

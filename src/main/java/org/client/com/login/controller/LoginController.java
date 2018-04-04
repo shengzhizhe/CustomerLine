@@ -7,8 +7,8 @@ import org.apache.shiro.session.SessionException;
 import org.apache.shiro.subject.Subject;
 import org.client.com.MyUsernamePasswordToken;
 import org.client.com.login.model.LoginModel;
-import org.client.com.server.TokenInterface;
-import org.client.com.server.model.TokenModel;
+import org.client.com.login.model.TokenModel;
+import org.client.com.login.service.TokenService;
 import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
@@ -35,7 +35,7 @@ public class LoginController {
             .getLogger(LoginController.class);
 
     @Autowired
-    private TokenInterface tkInterface;
+    private TokenService tokenService;
 
     /**
      * @param model         LoginModel
@@ -80,7 +80,7 @@ public class LoginController {
             tokenModel.setEndTimes(times);
             tokenModel.setAccount(model.getUsername());
             tokenModel.setUuid(GetUuid.getUUID());
-            ResponseResult<TokenModel> result1 = tkInterface.add(tokenModel);
+            ResponseResult<TokenModel> result1 = tokenService.add(tokenModel);
             if (result1.isSuccess()) {
                 Cookie cookie = new Cookie("token", tokenModel.getToken());
                 cookie.setPath("/");
@@ -109,7 +109,7 @@ public class LoginController {
             Cookie[] cookies = request.getCookies();
             for (int i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName().equals("token")) {
-                    tkInterface.updateToken(cookies[i].getValue());
+                    tokenService.updateToken(cookies[i].getValue());
                     Cookie cookie = new Cookie("token", null);
                     cookie.setPath("/");
                     cookie.setMaxAge(0);

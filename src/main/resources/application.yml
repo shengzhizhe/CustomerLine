@@ -9,19 +9,13 @@ spring:
     encoding: UTF-8
 #缓存
     cache: false
+#  database
+  datasource:
+      url: jdbc:mysql://192.168.1.130:3306/jpt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
 
-#邮箱
-  mail:
-    host: smtp.qq.com
-    username: 287656156@qq.com
-    password: capvszpolemibgdc
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
 feign:
   hystrix:
 #  开启熔断机制，默认是开启的

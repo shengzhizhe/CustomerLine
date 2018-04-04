@@ -1,0 +1,984 @@
+2018-04-04 10:18:30.585  INFO 6396 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 6396 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:18:30.589  INFO 6396 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:18:31.535  INFO 6396 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5f15b8c4: startup date [Wed Apr 04 10:18:31 CST 2018]; root of context hierarchy
+2018-04-04 10:18:33.976  INFO 6396 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:18:33.978  INFO 6396 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:18:35.299  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:35.465  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:35.631  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8ac607ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:35.917  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$2898b5be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:36.696  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:36.906  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:36.927  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$bd9a58fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:36.945  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.013  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.292  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.317  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$6cb9ab2e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.351  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.505  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.548  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.646  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.657  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [com.sun.proxy.$Proxy87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.660  INFO 6396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenServiceImpl' of type [org.client.com.login.service.impl.TokenServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:18:37.872  WARN 6396 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shirFilter' defined in class path resource [org/client/com/ShiroConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/client/com/ShiroConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [org/client/com/ShiroConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.mgt.SecurityManager]: Factory method 'securityManager' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myShiroRealm': Unsatisfied dependency expressed through field 'tokenService'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tokenServiceImpl' is expected to be of type 'org.client.com.login.service.impl.TokenServiceImpl' but was actually of type 'com.sun.proxy.$Proxy89'
+2018-04-04 10:18:37.880 ERROR 6396 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'dataSourceInitializer' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5f15b8c4: startup date [Wed Apr 04 10:18:31 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:18:37.886 ERROR 6396 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5f15b8c4: startup date [Wed Apr 04 10:18:31 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:18:37.888 ERROR 6396 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5f15b8c4: startup date [Wed Apr 04 10:18:31 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:18:37.923 ERROR 6396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'tokenServiceImpl' could not be injected as a 'org.client.com.login.service.impl.TokenServiceImpl' because it is a JDK dynamic proxy that implements:
+	org.client.com.login.service.TokenService
+
+
+Action:
+
+Consider injecting the bean as one of its interfaces or forcing the use of CGLib-based proxies by setting proxyTargetClass=true on @EnableAsync and/or @EnableCaching.
+
+2018-04-04 10:19:00.883  INFO 5760 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 5760 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:19:00.886  INFO 5760 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:19:01.562  INFO 5760 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66d79f06: startup date [Wed Apr 04 10:19:01 CST 2018]; root of context hierarchy
+2018-04-04 10:19:04.155  INFO 5760 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:19:04.156  INFO 5760 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:19:05.506  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:05.667  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:05.831  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$92306341] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:06.080  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$30031131] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:06.791  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:06.986  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.009  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c504b471] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.026  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.076  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.362  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.380  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$742406a1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.406  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.534  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.572  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.625  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.636  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [com.sun.proxy.$Proxy87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.639  INFO 5760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenServiceImpl' of type [org.client.com.login.service.impl.TokenServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:07.707  WARN 5760 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shirFilter' defined in class path resource [org/client/com/ShiroConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/client/com/ShiroConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [org/client/com/ShiroConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.mgt.SecurityManager]: Factory method 'securityManager' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myShiroRealm': Unsatisfied dependency expressed through field 'tokenService'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tokenServiceImpl' is expected to be of type 'org.client.com.login.service.impl.TokenServiceImpl' but was actually of type 'com.sun.proxy.$Proxy89'
+2018-04-04 10:19:07.713 ERROR 5760 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'dataSourceInitializer' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66d79f06: startup date [Wed Apr 04 10:19:01 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:07.716 ERROR 5760 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66d79f06: startup date [Wed Apr 04 10:19:01 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:07.718 ERROR 5760 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66d79f06: startup date [Wed Apr 04 10:19:01 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:07.728 ERROR 5760 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'tokenServiceImpl' could not be injected as a 'org.client.com.login.service.impl.TokenServiceImpl' because it is a JDK dynamic proxy that implements:
+	org.client.com.login.service.TokenService
+
+
+Action:
+
+Consider injecting the bean as one of its interfaces or forcing the use of CGLib-based proxies by setting proxyTargetClass=true on @EnableAsync and/or @EnableCaching.
+
+2018-04-04 10:19:36.043  INFO 1976 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 1976 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:19:36.047  INFO 1976 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:19:37.096  INFO 1976 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ac98173: startup date [Wed Apr 04 10:19:37 CST 2018]; root of context hierarchy
+2018-04-04 10:19:40.057  INFO 1976 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:19:40.060  INFO 1976 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:19:41.224  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:41.362  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:41.531  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f58bbe20] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:41.802  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$935e6c10] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.459  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.643  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.663  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$28600f50] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.677  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.715  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.944  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.963  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$d77f6180] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:42.993  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.106  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.144  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.200  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.212  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [com.sun.proxy.$Proxy87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.215  INFO 1976 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenServiceImpl' of type [org.client.com.login.service.impl.TokenServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:19:43.291  WARN 1976 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shirFilter' defined in class path resource [org/client/com/ShiroConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/client/com/ShiroConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [org/client/com/ShiroConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.mgt.SecurityManager]: Factory method 'securityManager' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myShiroRealm': Unsatisfied dependency expressed through field 'tokenService'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tokenServiceImpl' is expected to be of type 'org.client.com.login.service.impl.TokenServiceImpl' but was actually of type 'com.sun.proxy.$Proxy89'
+2018-04-04 10:19:43.299 ERROR 1976 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'dataSourceInitializer' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ac98173: startup date [Wed Apr 04 10:19:37 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:43.301 ERROR 1976 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ac98173: startup date [Wed Apr 04 10:19:37 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:43.303 ERROR 1976 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ac98173: startup date [Wed Apr 04 10:19:37 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:19:43.310 ERROR 1976 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'tokenServiceImpl' could not be injected as a 'org.client.com.login.service.impl.TokenServiceImpl' because it is a JDK dynamic proxy that implements:
+	org.client.com.login.service.TokenService
+
+
+Action:
+
+Consider injecting the bean as one of its interfaces or forcing the use of CGLib-based proxies by setting proxyTargetClass=true on @EnableAsync and/or @EnableCaching.
+
+2018-04-04 10:20:23.165  INFO 6800 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 6800 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:20:23.169  INFO 6800 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:20:23.984  INFO 6800 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77a54500: startup date [Wed Apr 04 10:20:23 CST 2018]; root of context hierarchy
+2018-04-04 10:20:26.011  INFO 6800 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:20:26.013  INFO 6800 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:20:27.163  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:27.308  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:27.458  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bab77422] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:27.664  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$588a2212] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.322  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.521  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.542  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ed8bc552] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.559  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.596  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.788  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.815  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$9cab1782] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.847  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.949  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:28.979  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:29.032  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:29.044  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenMapper' of type [com.sun.proxy.$Proxy87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:29.047  INFO 6800 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenServiceImpl' of type [org.client.com.login.service.impl.TokenServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:20:29.119  WARN 6800 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shirFilter' defined in class path resource [org/client/com/ShiroConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/client/com/ShiroConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [org/client/com/ShiroConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.mgt.SecurityManager]: Factory method 'securityManager' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myShiroRealm': Unsatisfied dependency expressed through field 'tokenService'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tokenServiceImpl' is expected to be of type 'org.client.com.login.service.impl.TokenServiceImpl' but was actually of type 'com.sun.proxy.$Proxy89'
+2018-04-04 10:20:29.125 ERROR 6800 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'dataSourceInitializer' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77a54500: startup date [Wed Apr 04 10:20:23 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:20:29.129 ERROR 6800 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77a54500: startup date [Wed Apr 04 10:20:23 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:20:29.130 ERROR 6800 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77a54500: startup date [Wed Apr 04 10:20:23 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+
+2018-04-04 10:20:29.139 ERROR 6800 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'tokenServiceImpl' could not be injected as a 'org.client.com.login.service.impl.TokenServiceImpl' because it is a JDK dynamic proxy that implements:
+	org.client.com.login.service.TokenService
+
+
+Action:
+
+Consider injecting the bean as one of its interfaces or forcing the use of CGLib-based proxies by setting proxyTargetClass=true on @EnableAsync and/or @EnableCaching.
+
+2018-04-04 10:21:56.999  INFO 1420 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 1420 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:21:57.111  INFO 1420 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:21:58.222  INFO 1420 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7cd7bad7: startup date [Wed Apr 04 10:21:58 CST 2018]; root of context hierarchy
+2018-04-04 10:22:00.822  INFO 1420 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:22:00.825  INFO 1420 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:22:01.959  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:02.079  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:02.248  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a748bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:02.522  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$a279f6ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:03.224  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:03.255  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [org.client.com.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:03.280  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm2' of type [org.client.com.MyShiroRealm2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:03.304  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:03.343  INFO 1420 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:04.348  INFO 1420 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8998 (http)
+2018-04-04 10:22:04.379  INFO 1420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-04 10:22:04.381  INFO 1420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-04-04 10:22:04.572  INFO 1420 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-04 10:22:04.574  INFO 1420 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6420 ms
+2018-04-04 10:22:05.109  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-04 10:22:05.115  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-04 10:22:05.116  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-04 10:22:05.117  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-04 10:22:05.117  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-04 10:22:05.117  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2018-04-04 10:22:05.117  INFO 1420 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2018-04-04 10:22:05.852  WARN 1420 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+2018-04-04 10:22:05.873  INFO 1420 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-04 10:22:05.886 ERROR 1420 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:526) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:344) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:297) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:992) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lorg/springframework/mail/javamail/JavaMailSender;
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_151]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_151]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_151]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:715) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:656) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:361) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:340) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.mail.javamail.JavaMailSender
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:151) ~[spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	... 30 common frames omitted
+
+2018-04-04 10:22:54.325  INFO 5748 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 5748 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:22:54.329  INFO 5748 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:22:55.145  INFO 5748 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@252467e6: startup date [Wed Apr 04 10:22:55 CST 2018]; root of context hierarchy
+2018-04-04 10:22:58.019  INFO 5748 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:22:58.022  INFO 5748 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:22:59.621  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:59.748  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:22:59.936  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1cc958ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:00.194  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$ba9c069e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:02.684  INFO 7016 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 7016 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:23:02.687  INFO 7016 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:23:03.615  INFO 7016 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@af33950: startup date [Wed Apr 04 10:23:03 CST 2018]; root of context hierarchy
+2018-04-04 10:23:07.690  INFO 7016 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:23:07.693  INFO 7016 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:23:09.316  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.359  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [org.client.com.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.385  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm2' of type [org.client.com.MyShiroRealm2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.408  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.451  INFO 5748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.607  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:09.733  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:10.584  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9e6da73d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:10.914  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$3c40552d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:11.481  INFO 5748 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8998 (http)
+2018-04-04 10:23:11.508  INFO 5748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-04 10:23:11.511  INFO 5748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-04-04 10:23:11.707  INFO 5748 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-04 10:23:11.707  INFO 5748 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 16565 ms
+2018-04-04 10:23:12.246  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-04 10:23:12.254  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-04 10:23:12.255  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-04 10:23:12.255  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-04 10:23:12.255  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-04 10:23:12.255  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2018-04-04 10:23:12.256  INFO 5748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2018-04-04 10:23:13.275  WARN 5748 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+2018-04-04 10:23:13.299  INFO 5748 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-04 10:23:13.311 ERROR 5748 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:526) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:344) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:297) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:992) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lorg/springframework/mail/javamail/JavaMailSender;
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_151]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_151]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_151]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:715) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:656) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:361) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:340) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.mail.javamail.JavaMailSender
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:151) ~[spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	... 30 common frames omitted
+
+2018-04-04 10:23:14.393  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:14.446  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [org.client.com.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:14.471  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm2' of type [org.client.com.MyShiroRealm2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:14.495  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:14.541  INFO 7016 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:23:15.801  INFO 7016 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8998 (http)
+2018-04-04 10:23:15.821  INFO 7016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-04 10:23:15.823  INFO 7016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-04-04 10:23:16.268  INFO 7016 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-04 10:23:16.269  INFO 7016 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 12659 ms
+2018-04-04 10:23:16.809  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-04 10:23:16.818  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-04 10:23:16.819  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-04 10:23:16.820  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-04 10:23:16.820  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-04 10:23:16.821  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2018-04-04 10:23:16.821  INFO 7016 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2018-04-04 10:23:17.876  WARN 7016 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+2018-04-04 10:23:18.165  INFO 7016 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-04 10:23:18.180 ERROR 7016 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController' defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\email\controller\EmailController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:526) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151) [spring-boot-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at org.client.com.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect bean class [org.client.com.email.controller.EmailController] for resource metadata: could not find class that it depends on
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:344) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:297) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:992) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lorg/springframework/mail/javamail/JavaMailSender;
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_151]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_151]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_151]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:715) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:656) ~[spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:361) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:340) ~[spring-context-4.3.11.RELEASE.jar:4.3.11.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.mail.javamail.JavaMailSender
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:151) ~[spring-boot-devtools-1.5.1.RELEASE.jar:1.5.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_151]
+	... 30 common frames omitted
+
+2018-04-04 10:24:39.458  INFO 6060 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 6060 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:24:39.467  INFO 6060 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:24:40.375  INFO 6060 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@8b66a94: startup date [Wed Apr 04 10:24:40 CST 2018]; root of context hierarchy
+2018-04-04 10:24:42.426  INFO 6060 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:24:42.428  INFO 6060 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:24:43.670  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:43.795  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:43.952  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$736abdaa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.201  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$113d6b9a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.863  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.907  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [org.client.com.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.930  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm2' of type [org.client.com.MyShiroRealm2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.955  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:44.993  INFO 6060 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:24:46.013  INFO 6060 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8998 (http)
+2018-04-04 10:24:46.039  INFO 6060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-04 10:24:46.041  INFO 6060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-04-04 10:24:46.209  INFO 6060 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-04 10:24:46.210  INFO 6060 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5840 ms
+2018-04-04 10:24:46.652  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-04 10:24:46.659  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-04 10:24:46.660  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-04 10:24:46.660  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-04 10:24:46.660  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-04 10:24:46.661  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2018-04-04 10:24:46.661  INFO 6060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2018-04-04 10:24:47.681  WARN 6060 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personalDataController': Unsatisfied dependency expressed through field 'personalService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personalServiceImpl': Unsatisfied dependency expressed through field 'result'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-04-04 10:24:47.700  INFO 6060 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-04-04 10:24:47.943 ERROR 6060 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field result in org.client.com.personaldata.service.serviceImpl.PersonalServiceImpl required a bean of type 'org.client.com.util.resultJson.ResponseResult' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.client.com.util.resultJson.ResponseResult' in your configuration.
+
+2018-04-04 10:26:56.653  INFO 6148 --- [restartedMain] org.client.com.Application               : Starting Application on 110-PC with PID 6148 (D:\shengzhizhe\CustomerLine\target\classes started by 222 in D:\shengzhizhe\CustomerLine)
+2018-04-04 10:26:56.658  INFO 6148 --- [restartedMain] org.client.com.Application               : No active profile set, falling back to default profiles: default
+2018-04-04 10:26:57.509  INFO 6148 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7cd7bad7: startup date [Wed Apr 04 10:26:57 CST 2018]; root of context hierarchy
+2018-04-04 10:26:59.524  INFO 6148 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:26:59.526  INFO 6148 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'myShiroRealm2' with a different definition: replacing [Generic bean: class [org.client.com.MyShiroRealm2]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\shengzhizhe\CustomerLine\target\classes\org\client\com\MyShiroRealm2.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=shiroConfiguration; factoryMethodName=myShiroRealm2; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/client/com/ShiroConfiguration.class]]
+2018-04-04 10:27:00.694  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:00.812  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:00.933  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$47af6723] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.174  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [org.client.com.ShiroConfiguration$$EnhancerBySpringCGLIB$$e5821513] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.806  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customizedModularRealmAuthenticator' of type [org.client.com.MyModularRealmAuthenticator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.872  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [org.client.com.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.896  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myShiroRealm2' of type [org.client.com.MyShiroRealm2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.919  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:01.957  INFO 6148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-04 10:27:02.951  INFO 6148 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8998 (http)
+2018-04-04 10:27:02.976  INFO 6148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-04 10:27:02.979  INFO 6148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-04-04 10:27:03.141  INFO 6148 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-04 10:27:03.142  INFO 6148 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5636 ms
+2018-04-04 10:27:03.685  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-04 10:27:03.693  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-04 10:27:03.694  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-04 10:27:03.695  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-04 10:27:03.695  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-04 10:27:03.695  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2018-04-04 10:27:03.696  INFO 6148 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2018-04-04 10:27:05.486  INFO 6148 --- [restartedMain] o.s.aop.framework.CglibAopProxy          : Method [java.util.List springfox.documentation.schema.property.OptimizedModelPropertiesProvider.candidateProperties(com.fasterxml.classmate.ResolvedType,com.fasterxml.jackson.databind.introspect.AnnotatedMember,com.fasterxml.jackson.databind.introspect.BeanPropertyDefinition,springfox.documentation.spi.schema.contexts.ModelContext)] is package-visible across different ClassLoaders and cannot get proxied via CGLIB: Declare this method as public or protected if you need to support invocations through the proxy.
+2018-04-04 10:27:06.301  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/commodity/commodity/getByUuid/{uuid}],methods=[GET]}" onto public org.client.com.util.resultJson.ResponseResult org.client.com.commodity.controller.CommodityController.getByUuid(java.lang.String)
+2018-04-04 10:27:06.303  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/commodity/commodity/page/{paegNow}/{pageSize}/{lm}],methods=[GET]}" onto public org.client.com.util.resultJson.ResponseResult org.client.com.commodity.controller.CommodityController.page(int,int,java.lang.String)
+2018-04-04 10:27:06.306  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/login],methods=[POST],consumes=[application/json;charset=UTF-8],produces=[application/json;charset=UTF-8]}" onto public org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel> org.client.com.login.controller.LoginController.login(org.client.com.login.model.LoginModel,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletResponse)
+2018-04-04 10:27:06.307  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login/logout],methods=[GET]}" onto public void org.client.com.login.controller.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-04 10:27:06.309  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/personalData/personalData],methods=[PUT],consumes=[application/json;charset=UTF-8],produces=[application/json;charset=UTF-8]}" onto public org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel> org.client.com.personaldata.controller.PersonalDataController.update(org.client.com.personaldata.model.PersonalModel)
+2018-04-04 10:27:06.310  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/personalData/personalData/account/{account}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel> org.client.com.personaldata.controller.PersonalDataController.getByAccount(java.lang.String)
+2018-04-04 10:27:06.311  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register/register],methods=[POST],consumes=[application/json;charset=UTF-8],produces=[application/json;charset=UTF-8]}" onto public org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel> org.client.com.register.controller.RegisterController.register(org.client.com.register.model.RegisterModel,org.springframework.validation.BindingResult)
+2018-04-04 10:27:06.311  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/defaultKaptcha],methods=[GET]}" onto public void org.client.com.verification.controller.Verification.defaultKaptcha(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-04-04 10:27:06.312  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-04-04 10:27:06.314  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-04-04 10:27:06.315  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-04-04 10:27:06.316  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-04-04 10:27:06.319  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-04 10:27:06.320  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-04 10:27:06.939  INFO 6148 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7cd7bad7: startup date [Wed Apr 04 10:26:57 CST 2018]; root of context hierarchy
+2018-04-04 10:27:07.098  INFO 6148 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-04 10:27:07.098  INFO 6148 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-04 10:27:07.149  INFO 6148 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandler
+2018-04-04 10:27:07.267  INFO 6148 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-04 10:27:08.812  INFO 6148 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-04-04 10:27:08.994  INFO 6148 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-04 10:27:09.021  INFO 6148 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-04-04 10:27:09.064  INFO 6148 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2018-04-04 10:27:09.079  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-04-04 10:27:09.087  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByUuid was commodity
+2018-04-04 10:27:09.092  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getByUuid belongs to groups: [[ResourceGroup{groupName='commodity', position=0, controller=org.client.com.commodity.controller.CommodityController}]] 
+2018-04-04 10:27:09.094  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method page was commodity
+2018-04-04 10:27:09.094  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: page belongs to groups: [[ResourceGroup{groupName='commodity', position=0, controller=org.client.com.commodity.controller.CommodityController}]] 
+2018-04-04 10:27:09.096  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method defaultKaptcha was verification
+2018-04-04 10:27:09.096  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: defaultKaptcha belongs to groups: [[ResourceGroup{groupName='verification', position=0, controller=org.client.com.verification.controller.Verification}]] 
+2018-04-04 10:27:09.098  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was login
+2018-04-04 10:27:09.098  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: login belongs to groups: [[ResourceGroup{groupName='login', position=0, controller=org.client.com.login.controller.LoginController}]] 
+2018-04-04 10:27:09.099  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method logout was login
+2018-04-04 10:27:09.099  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: logout belongs to groups: [[ResourceGroup{groupName='login', position=0, controller=org.client.com.login.controller.LoginController}]] 
+2018-04-04 10:27:09.100  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByAccount was personaldata
+2018-04-04 10:27:09.101  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getByAccount belongs to groups: [[ResourceGroup{groupName='personaldata', position=0, controller=org.client.com.personaldata.controller.PersonalDataController}]] 
+2018-04-04 10:27:09.103  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method update was personaldata
+2018-04-04 10:27:09.104  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: update belongs to groups: [[ResourceGroup{groupName='personaldata', position=0, controller=org.client.com.personaldata.controller.PersonalDataController}]] 
+2018-04-04 10:27:09.106  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was register
+2018-04-04 10:27:09.106  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: register belongs to groups: [[ResourceGroup{groupName='register', position=0, controller=org.client.com.register.controller.RegisterController}]] 
+2018-04-04 10:27:09.111  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/register Description: register Position: 0
+2018-04-04 10:27:09.113  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/login Description: login Position: 0
+2018-04-04 10:27:09.113  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/commodity Description: commodity Position: 0
+2018-04-04 10:27:09.113  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/personaldata Description: personaldata Position: 0
+2018-04-04 10:27:09.114  INFO 6148 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/verification Description: verification Position: 0
+2018-04-04 10:27:09.334  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.334  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.355  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.356  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.422  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.422  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.427  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.428  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.433  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /commodity/commodity/getByUuid/{uuid}.org.client.com.commodity.controller.CommodityController.getByUuid.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.433  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /commodity/commodity/getByUuid/{uuid}.org.client.com.commodity.controller.CommodityController.getByUuid.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.475  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByUuid was commodity
+2018-04-04 10:27:09.496  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByUuid was commodity
+2018-04-04 10:27:09.509  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.509  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.510  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.510  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.511  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /commodity/commodity/page/{paegNow}/{pageSize}/{lm}.org.client.com.commodity.controller.CommodityController.page.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.511  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /commodity/commodity/page/{paegNow}/{pageSize}/{lm}.org.client.com.commodity.controller.CommodityController.page.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.517  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method page was commodity
+2018-04-04 10:27:09.518  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method page was commodity
+2018-04-04 10:27:09.530  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.531  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.531  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.532  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.538  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.538  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.539  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.539  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.552  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.553  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.login.model.LoginModel>(true)
+2018-04-04 10:27:09.554  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.554  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.555  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.555  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.login.model.LoginModel(true)
+2018-04-04 10:27:09.555  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.556  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.557  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.557  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.563  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.564  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.565  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.578  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.login.model.LoginModel(false)
+2018-04-04 10:27:09.579  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.583  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.583  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.584  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.584  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /login/login.org.client.com.login.controller.LoginController.login.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.584  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /login/login.org.client.com.login.controller.LoginController.login.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.588  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was login
+2018-04-04 10:27:09.596  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was login
+2018-04-04 10:27:09.598  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-04-04 10:27:09.598  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.Void(true)
+2018-04-04 10:27:09.598  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-04-04 10:27:09.598  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.Void(true)
+2018-04-04 10:27:09.599  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /login/logout.org.client.com.login.controller.LoginController.logout.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.599  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /login/logout.org.client.com.login.controller.LoginController.logout.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.600  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method logout was login
+2018-04-04 10:27:09.601  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method logout was login
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.609  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.610  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.610  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.612  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.612  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.612  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.612  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.616  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.623  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.624  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.624  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.625  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.625  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.625  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /personalData/personalData/account/{account}.org.client.com.personaldata.controller.PersonalDataController.getByAccount.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.625  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /personalData/personalData/account/{account}.org.client.com.personaldata.controller.PersonalDataController.getByAccount.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.627  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByAccount was personaldata
+2018-04-04 10:27:09.628  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getByAccount was personaldata
+2018-04-04 10:27:09.634  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.634  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.635  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.636  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.636  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.637  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.637  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.637  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult<org.client.com.personaldata.model.PersonalModel>(true)
+2018-04-04 10:27:09.637  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.637  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(true)
+2018-04-04 10:27:09.638  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.641  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.643  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.643  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.649  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.650  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.651  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.651  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.personaldata.model.PersonalModel(false)
+2018-04-04 10:27:09.651  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /personalData/personalData.org.client.com.personaldata.controller.PersonalDataController.update.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.652  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /personalData/personalData.org.client.com.personaldata.controller.PersonalDataController.update.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.657  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method update was personaldata
+2018-04-04 10:27:09.659  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method update was personaldata
+2018-04-04 10:27:09.671  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.674  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.674  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.674  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.680  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.681  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.681  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.681  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.register.model.RegisterModel(false)
+2018-04-04 10:27:09.682  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.683  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.695  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.697  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.698  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.698  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.699  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.699  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.704  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.708  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.710  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.711  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.714  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.714  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.util.resultJson.ResponseResult<org.client.com.register.model.RegisterModel>(true)
+2018-04-04 10:27:09.715  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.715  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.715  INFO 6148 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.715  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.client.com.register.model.RegisterModel(true)
+2018-04-04 10:27:09.717  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /register/register.org.client.com.register.controller.RegisterController.register.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.717  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /register/register.org.client.com.register.controller.RegisterController.register.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.719  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was register
+2018-04-04 10:27:09.720  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was register
+2018-04-04 10:27:09.721  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.724  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.724  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.725  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.client.com.util.resultJson.ResponseResult(true)
+2018-04-04 10:27:09.726  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-04-04 10:27:09.726  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.Void(true)
+2018-04-04 10:27:09.726  INFO 6148 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-04-04 10:27:09.726  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.Void(true)
+2018-04-04 10:27:09.727  INFO 6148 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /defaultKaptcha.org.client.com.verification.controller.Verification.defaultKaptcha.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.728  INFO 6148 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /defaultKaptcha.org.client.com.verification.controller.Verification.defaultKaptcha.DefaultGenericTypeNamingStrategy
+2018-04-04 10:27:09.730  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method defaultKaptcha was verification
+2018-04-04 10:27:09.731  INFO 6148 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method defaultKaptcha was verification
+2018-04-04 10:27:10.225  INFO 6148 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8998 (http)
+2018-04-04 10:27:10.236  INFO 6148 --- [restartedMain] org.client.com.Application               : Started Application in 15.09 seconds (JVM running for 16.655)
+2018-04-04 10:27:15.614  INFO 6148 --- [http-nio-8998-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-04 10:27:15.615  INFO 6148 --- [http-nio-8998-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-04 10:27:15.675  INFO 6148 --- [http-nio-8998-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 60 ms
+2018-04-04 10:27:16.248  INFO 6148 --- [http-nio-8998-exec-1] o.c.c.p.s.s.PersonalServiceImpl          : ==>  [入参2018-04-04 10:27:16]---service:[${spring.application.name}]---method:[getByAccount]---parameters:[xuesemofa@163com]---resultCode:[0]---resultMessge:[]
+2018-04-04 10:27:16.322  INFO 6148 --- [http-nio-8998-exec-1] o.c.c.p.s.s.PersonalServiceImpl          : <==  [出参2018-04-04 10:27:16]---service:[${spring.application.name}]---method:[getByAccount]---parameters:[xuesemofa@163com]---resultCode:[0]---resultMessge:[]
+2018-04-04 10:27:19.600  INFO 6148 --- [http-nio-8998-exec-2] o.c.c.p.s.s.PersonalServiceImpl          : ==>  [入参2018-04-04 10:27:19]---service:[${spring.application.name}]---method:[getByAccount]---parameters:[xuesemofa@163com]---resultCode:[0]---resultMessge:[]
+2018-04-04 10:27:19.603  INFO 6148 --- [http-nio-8998-exec-2] o.c.c.p.s.s.PersonalServiceImpl          : <==  [出参2018-04-04 10:27:19]---service:[${spring.application.name}]---method:[getByAccount]---parameters:[xuesemofa@163com]---resultCode:[0]---resultMessge:[]

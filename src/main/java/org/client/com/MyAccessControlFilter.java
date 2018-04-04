@@ -1,17 +1,15 @@
 package org.client.com;
 
-import feign.Feign;
-import feign.jackson.JacksonDecoder;
-import feign.jackson.JacksonEncoder;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
-import org.client.com.server.TokenInterface;
-import org.client.com.server.model.TokenModel;
+import org.client.com.login.model.TokenModel;
+import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * @author Created by pangkunkun on 2017/11/18.
@@ -26,6 +25,9 @@ import java.io.IOException;
 public class MyAccessControlFilter extends AccessControlFilter {
 
     private static final Logger log = LoggerFactory.getLogger(MyAccessControlFilter.class);
+
+    @Autowired
+    private TokenService tokenService;
 
     /**
      * 表示是否允许访问；mappedValue就是[urls]配置中拦截器参数部分，如果允许访问返回true，否则false；
@@ -59,12 +61,12 @@ public class MyAccessControlFilter extends AccessControlFilter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 
 //        获取所有请求的参数
-//        Enumeration enu = request.getParameterNames();
-//        while (enu.hasMoreElements()) {
-//            String paraName = (String) enu.nextElement();
-//            String s = request.getParameter(paraName).replace("共产党", "#");
-//            request.setAttribute(paraName, s);
-//        }
+        Enumeration enu = request.getParameterNames();
+        while (enu.hasMoreElements()) {
+            String paraName = (String) enu.nextElement();
+            String s = request.getParameter(paraName).replace("共产党", "#");
+            request.setAttribute(paraName, s);
+        }
 
 //        获取cookie
         Cookie[] cookies = httpServletRequest.getCookies();
@@ -87,12 +89,9 @@ public class MyAccessControlFilter extends AccessControlFilter {
             return false;
         }
         log.info("令牌验证成功");
-        //        本过滤器在spring加载bean之前执行，所以直接调用feign
-        TokenInterface tkInterface = Feign.builder().encoder(new JacksonEncoder())
-                .decoder(new JacksonDecoder())
-                .target(TokenInterface.class, "http://39.106.33.113:9002/account");
+
 //        废弃原有令牌
-        ResponseResult<TokenModel> result1 = tkInterface.updateToken(token_str);
+        ResponseResult<TokenModel> result1 = tokenService.updateToken(token_str);
         if (result1.isSuccess()) {
 //        新的token
 //        保存进库
@@ -102,7 +101,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
             tokenModel.setIsUse("N");
             tokenModel.setToken(GetUuid.getUUID());
             tokenModel.setUuid(GetUuid.getUUID());
-            ResponseResult<TokenModel> result = tkInterface.add(tokenModel);
+            ResponseResult<TokenModel> result = tokenService.add(tokenModel);
             if (result.isSuccess()) {
                 Cookie cookie = new Cookie("token", tokenModel.getToken());
                 cookie.setPath("/");

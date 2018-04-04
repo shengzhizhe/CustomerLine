@@ -5,15 +5,16 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.client.com.server.AccountInterface;
-import org.client.com.server.TokenInterface;
-import org.client.com.server.model.AccountModel;
-import org.client.com.server.model.TokenModel;
+import org.client.com.login.model.LoginModel;
+import org.client.com.login.model.TokenModel;
+import org.client.com.login.service.AccountService;
+import org.client.com.login.service.TokenService;
+import org.client.com.login.service.impl.AccountServiceImpl;
+import org.client.com.login.service.impl.TokenServiceImpl;
 import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -24,10 +25,10 @@ public class MyShiroRealm2 extends AuthorizingRealm {
 
     private static final Logger log = LoggerFactory.getLogger(MyShiroRealm2.class);
 
-    @Autowired
-    private TokenInterface tkInterface;
-    @Autowired
-    private AccountInterface anInterface;
+//    @Autowired
+//    private TokenService tokenService;
+//    @Autowired
+//    private AccountService accountService;
 
     @Override
     public String getName() {
@@ -44,7 +45,8 @@ public class MyShiroRealm2 extends AuthorizingRealm {
             log.info("令牌为空");
             throw new UnknownAccountException();
         }
-        ResponseResult<TokenModel> result = tkInterface.getByToken(myToken.getSignature());
+        TokenService tokenService = new TokenServiceImpl();
+        ResponseResult<TokenModel> result = tokenService.getByToken(myToken.getSignature());
         if (result.isSuccess()) {
 //            如果token存在判断是否过期
             long now_times = System.currentTimeMillis();
@@ -68,7 +70,8 @@ public class MyShiroRealm2 extends AuthorizingRealm {
             );
         } else {
             if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
-                ResponseResult<AccountModel> account = anInterface.getAccount(myToken.getUsername());
+                AccountService accountService = new AccountServiceImpl();
+                ResponseResult<LoginModel> account = accountService.getByAccount(myToken.getUsername());
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),

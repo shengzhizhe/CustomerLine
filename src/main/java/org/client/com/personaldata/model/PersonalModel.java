@@ -14,12 +14,13 @@ public class PersonalModel implements Serializable {
     //    uuid
     private String uuid;
     //    账户
-    @Size(max = 100, message = "账户最大长度为100位")
+//    @NotBlank(message = "账户不能为空")
+//    @Size(max = 100, message = "账户最大长度为100位")
     private String account;
     //    头像
     private String portrait;
     //    昵称
-    @NotBlank(message = "昵称不能为空")
+//    @NotBlank(message = "昵称不能为空")
     @Pattern(regexp = "^[\\u4e00-\\u9fa5\\w\\d]{1,8}$", message = "昵称可以使用字母数字或汉字,最大长度为8位")
     private String nickname;
     //    姓
@@ -30,7 +31,7 @@ public class PersonalModel implements Serializable {
     @Pattern(regexp = "^[\\u4e00-\\u9fa5]{1,20}$", message = "名 必须是汉字,最大长度为20位")
     private String name;
     //    手机
-    @NotBlank(message = "手机不能为空")
+//    @NotBlank(message = "手机不能为空")
     @Pattern(regexp = "^[1][3,4,5,6,7,8,9][0-9]{9}$", message = "请输入正确的手机号格式")
     private String phone;
     //    身份证号,支持15位和18位验证
@@ -38,7 +39,7 @@ public class PersonalModel implements Serializable {
     @Pattern(regexp = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)", message = "请输入正确的身份证格式")
     private String idno;
     //    性别 Y:男 N:女
-    @NotBlank(message = "性别不能为空")
+//    @NotBlank(message = "性别不能为空")
     @Pattern(regexp = "[Y,N]", message = "不支持第三性别")
     private String sex;
     //    地址

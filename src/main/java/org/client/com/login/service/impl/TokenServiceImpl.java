@@ -130,7 +130,6 @@ public class TokenServiceImpl implements TokenService {
     @Override
     public ResponseResult<TokenModel> getByToken2(String token) {
         ResponseResult<TokenModel> result = new ResponseResult<>();
-
         JDBC jdbc = new JDBC();
         List<TokenModel> models = jdbc.queryToken("select uuid,account,token,end_time endTimes,is_use isUse from token_table where token='"
                 + token + "' ORDER BY end_time desc LIMIT 1");

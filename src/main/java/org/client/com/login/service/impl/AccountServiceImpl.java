@@ -6,6 +6,7 @@ import org.client.com.login.mapper.AccountMapper;
 import org.client.com.login.model.LoginModel;
 import org.client.com.login.service.AccountService;
 import org.client.com.util.base64.Base64Util;
+import org.client.com.util.jdbc.JDBC;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.sl4j.Sl4jToString;
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 @Transactional
@@ -162,9 +164,12 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public ResponseResult<LoginModel> getByAccount2(String account) {
         ResponseResult<LoginModel> result = new ResponseResult<>();
-        if (account != null && !account.trim().equals(""))
+        JDBC jdbc = new JDBC();
+        List<LoginModel> models = jdbc.queryToken2("select * from account_table where username = '" + account + "'");
+        if (models.size() > 0) {
             result.setSuccess(true);
-        else
+            result.setData(models.get(0));
+        } else
             result.setSuccess(false);
         return result;
     }

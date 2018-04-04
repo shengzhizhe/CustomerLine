@@ -11,7 +11,6 @@ import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
 import org.client.com.login.service.impl.AccountServiceImpl;
 import org.client.com.login.service.impl.TokenServiceImpl;
-import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,7 +69,7 @@ public class MyShiroRealm2 extends AuthorizingRealm {
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),
-                            Base64Util.decode(account.getData().getPassword()),
+                            account.getData().getPassword(),
                             getName()
                     );
                 else

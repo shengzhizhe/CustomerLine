@@ -1,5 +1,6 @@
 package org.client.com.util.jdbc;
 
+import org.client.com.login.model.LoginModel;
 import org.client.com.login.model.TokenModel;
 
 import java.sql.Connection;
@@ -34,6 +35,34 @@ public class JDBC {
                         result.getString(3),
                         result.getLong(4),
                         result.getString(5));
+                list.add(model);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(result, ps, conn);
+        }
+        return list;
+    }
+
+    public List<LoginModel> queryToken2(String sql) {
+        LoginModel model = null;
+        List<LoginModel> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        try {
+            //创建连接
+            conn = JDBCUtils.getConnetions();
+            //创建prepareStatement对象，用于执行SQL
+            ps = conn.prepareStatement(sql);
+            //获取查询结果集
+            result = ps.executeQuery();
+            while (result.next()) {
+                model = new LoginModel();
+                model.setUsername(result.getString(1));
+                model.setPassword(result.getString(2));
+                model.setTypes(result.getInt(3));
                 list.add(model);
             }
         } catch (Exception e) {

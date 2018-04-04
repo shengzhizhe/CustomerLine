@@ -150,8 +150,8 @@ public class MyAccessControlFilter extends AccessControlFilter {
         result.setMessage(message);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonGenerator jsonGenerator = objectMapper.getJsonFactory()
-                .createJsonGenerator(System.out, JsonEncoding.UTF8);
+        JsonGenerator jsonGenerator = objectMapper.getFactory()
+                .createGenerator(System.out, JsonEncoding.UTF8);
 
         //对象转JSON
         String json = objectMapper.writeValueAsString(result);//返回字符串，输出

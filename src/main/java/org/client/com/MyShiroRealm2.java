@@ -48,20 +48,20 @@ public class MyShiroRealm2 extends AuthorizingRealm {
         ResponseResult<TokenModel> result = tokenService.getByToken2(myToken.getSignature());
         if (result.isSuccess()) {
 //            如果token存在判断是否过期
-//            long now_times = System.currentTimeMillis();
-//            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
-////                密钥过期,请从新登录;
-//                log.info("令牌过期");
-//                throw new UnknownAccountException();
-//            }
-//
-////            判断是否是作废的令牌
-//            if (result.getData().getIsUse().equals("Y")) {
-////                令牌已作废
-//                log.info("令牌已用过");
-//                throw new UnknownAccountException();
-//            }
-//            myToken.setUsername(result.getData().getAccount());
+            long now_times = System.currentTimeMillis();
+            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
+//                密钥过期,请从新登录;
+                log.info("令牌过期");
+                throw new UnknownAccountException();
+            }
+
+//            判断是否是作废的令牌
+            if (result.getData().getIsUse().equals("Y")) {
+//                令牌已作废
+                log.info("令牌已用过");
+                throw new UnknownAccountException();
+            }
+            myToken.setUsername(result.getData().getAccount());
             return new SimpleAuthenticationInfo(
                     myToken,
                     myToken.getSignature(),

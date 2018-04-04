@@ -5,6 +5,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
+import org.client.com.login.service.impl.TokenServiceImpl;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
@@ -25,9 +26,6 @@ import java.util.Enumeration;
 public class MyAccessControlFilter extends AccessControlFilter {
 
     private static final Logger log = LoggerFactory.getLogger(MyAccessControlFilter.class);
-
-    @Autowired
-    private TokenService tokenService;
 
     /**
      * 表示是否允许访问；mappedValue就是[urls]配置中拦截器参数部分，如果允许访问返回true，否则false；
@@ -91,7 +89,8 @@ public class MyAccessControlFilter extends AccessControlFilter {
         log.info("令牌验证成功");
 
 //        废弃原有令牌
-        ResponseResult<TokenModel> result1 = tokenService.updateToken(token_str);
+        TokenService tokenService = new TokenServiceImpl();
+        ResponseResult<TokenModel> result1 = tokenService.updateToken2(token_str);
         if (result1.isSuccess()) {
 //        新的token
 //        保存进库
@@ -101,7 +100,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
             tokenModel.setIsUse("N");
             tokenModel.setToken(GetUuid.getUUID());
             tokenModel.setUuid(GetUuid.getUUID());
-            ResponseResult<TokenModel> result = tokenService.add(tokenModel);
+            ResponseResult<TokenModel> result = tokenService.add2(tokenModel);
             if (result.isSuccess()) {
                 Cookie cookie = new Cookie("token", tokenModel.getToken());
                 cookie.setPath("/");

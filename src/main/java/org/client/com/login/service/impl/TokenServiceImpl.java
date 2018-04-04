@@ -3,6 +3,7 @@ package org.client.com.login.service.impl;
 import org.client.com.login.mapper.TokenMapper;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
+import org.client.com.util.jdbc.JDBC;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.sl4j.Sl4jToString;
 import org.client.com.util.uuidUtil.GetUuid;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -40,6 +43,20 @@ public class TokenServiceImpl implements TokenService {
                 result.setData(null);
                 break;
         }
+        return result;
+    }
+
+    @Override
+    public ResponseResult<TokenModel> add2(TokenModel model) {
+        ResponseResult<TokenModel> result = new ResponseResult<>();
+        JDBC jdbc = new JDBC();
+        int i = jdbc.update("insert into token_table (uuid,account,token,end_time,is_use)" +
+                " values ('" + GetUuid.getUUID() + "','" + model.getAccount() + "','" + model.getToken()
+                + "'," + model.getEndTimes() + ",'" + model.getIsUse() + "')");
+        if (i > 0) {
+            result.setSuccess(true);
+        } else
+            result.setSuccess(false);
         return result;
     }
 
@@ -73,6 +90,18 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
+    public ResponseResult updateToken2(String token) {
+        ResponseResult<TokenModel> result = new ResponseResult<>();
+        JDBC jdbc = new JDBC();
+        int i = jdbc.update("update token_table set is_use = 'Y' where token = '" + token + "'");
+        if (i > 0) {
+            result.setSuccess(true);
+        } else
+            result.setSuccess(false);
+        return result;
+    }
+
+    @Override
     public ResponseResult getByToken(String token) {
         ResponseResult<TokenModel> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(1,
@@ -101,9 +130,15 @@ public class TokenServiceImpl implements TokenService {
     @Override
     public ResponseResult<TokenModel> getByToken2(String token) {
         ResponseResult<TokenModel> result = new ResponseResult<>();
-        if (token != null && !token.trim().equals(""))
+
+        JDBC jdbc = new JDBC();
+        List<TokenModel> models = jdbc.queryToken("select uuid,account,token,end_time endTimes,is_use isUse from token_table where token='"
+                + token + "' ORDER BY end_time desc LIMIT 1");
+
+        if (models.size() > 0) {
             result.setSuccess(true);
-        else
+            result.setData(models.get(0));
+        } else
             result.setSuccess(false);
         return result;
     }

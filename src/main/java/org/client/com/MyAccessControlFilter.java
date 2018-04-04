@@ -67,6 +67,14 @@ public class MyAccessControlFilter extends AccessControlFilter {
             request.setAttribute(paraName, s);
         }
 
+        //获取所有的消息头名称
+        Enumeration<String> headerNames = httpServletRequest.getHeaderNames();
+        //获取获取的消息头名称，获取对应的值，并输出
+        while (headerNames.hasMoreElements()) {
+            String nextElement = headerNames.nextElement();
+            System.out.println(nextElement + ":" + httpServletRequest.getHeader(nextElement));
+        }
+
         String token_str = httpServletRequest.getHeader("token");
 //        获取cookie
 //        Cookie[] cookies = httpServletRequest.getCookies();
@@ -119,6 +127,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
 //                cookie.setMaxAge(60);
 //                httpServletResponse.addCookie(cookie);
                 HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+                httpServletResponse.setHeader("Access-Control-Expose-Headers", "token");
                 httpServletResponse.setHeader("token", tokenModel.getToken());
                 return true;
             } else

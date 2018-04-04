@@ -23,6 +23,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.Enumeration;
 
 /**
  * login
@@ -54,7 +55,8 @@ public class LoginController {
     public ResponseResult<LoginModel> login(
             @Valid @RequestBody LoginModel model,
             BindingResult bindingResult,
-            HttpServletResponse response) {
+            HttpServletResponse response,
+            HttpServletRequest request) {
 
         ResponseResult<LoginModel> result = new ResponseResult<>();
         if (bindingResult.hasErrors()) {
@@ -88,6 +90,7 @@ public class LoginController {
 //                cookie.setMaxAge(60);
 //                response.addCookie(cookie);
 //                用头部信息方式
+                response.setHeader("Access-Control-Expose-Headers", "token");
                 response.setHeader("token", tokenModel.getToken());
                 result.setSuccess(true);
                 result.setMessage(tokenModel.getToken());

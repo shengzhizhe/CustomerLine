@@ -103,7 +103,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
         } catch (Exception e) {
             log.info("令牌验证失败，令牌错误");
             log.info(e.getMessage());
-            onLoginFail(response, "非法的密匙");
+            onLoginFail(response, e.getMessage());
             return false;
         }
         log.info("令牌验证成功");

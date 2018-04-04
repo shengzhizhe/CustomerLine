@@ -11,6 +11,7 @@ import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
 import org.client.com.login.service.impl.AccountServiceImpl;
 import org.client.com.login.service.impl.TokenServiceImpl;
+import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +24,6 @@ import org.springframework.context.annotation.Configuration;
 public class MyShiroRealm2 extends AuthorizingRealm {
 
     private static final Logger log = LoggerFactory.getLogger(MyShiroRealm2.class);
-
-//    @Autowired
-//    private TokenService tokenService;
-//    @Autowired
-//    private AccountService accountService;
 
     @Override
     public String getName() {
@@ -74,8 +70,7 @@ public class MyShiroRealm2 extends AuthorizingRealm {
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),
-//                            Base64Util.decode(account.getData().getPassword()),
-                            myToken.getSignature(),
+                            Base64Util.decode(account.getData().getPassword()),
                             getName()
                     );
                 else

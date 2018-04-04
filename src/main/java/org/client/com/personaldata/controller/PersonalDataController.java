@@ -30,7 +30,7 @@ public class PersonalDataController {
             response = ResponseResult.class,
             httpMethod = "GET",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/personalData/account/{account}", method = RequestMethod.GET,
+    @RequestMapping(value = "/personalData/account/{account:.+}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseResult<PersonalModel> getByAccount(@PathVariable("account") String account) {
         return personalService.getByAccount(account);

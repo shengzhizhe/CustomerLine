@@ -15,6 +15,10 @@ spring:
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
+#     启用控制台颜色
+  output:
+        ansi:
+          enabled: ALWAYS
 #      应对OPTIONS请求
   mvc:
     dispatch-options-request: true
@@ -37,11 +41,20 @@ feign:
 error: true
 logging:
     file: CustomerClient.log
-    level: org.client.com:debug
+    level:
+      org.client.com: debug
 
 #分页每页默认条数设置
 page:
   pageSize: 15
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params:
+        count:
+            countSql
   
 #全局上传下载读取文件路径设置
 filesPath: D:\\file\\

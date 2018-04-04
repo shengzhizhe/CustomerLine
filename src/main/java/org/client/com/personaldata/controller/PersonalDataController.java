@@ -54,7 +54,8 @@ public class PersonalDataController {
             result.setMessage(bindingResult.getFieldError().getDefaultMessage());
             return result;
         }
-        if (model.getUuid() == null || model.getUuid().trim().equals(""))
+        ResponseResult<PersonalModel> result = personalService.getByAccount(model.getAccount());
+        if (!result.isSuccess())
             return personalService.save(model);
         else
             return personalService.update(model);

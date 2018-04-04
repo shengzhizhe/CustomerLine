@@ -1,5 +1,8 @@
 package org.client.com;
 
+import com.fasterxml.jackson.core.JsonEncoding;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
@@ -8,6 +11,7 @@ import org.client.com.login.service.TokenService;
 import org.client.com.login.service.impl.TokenServiceImpl;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -126,11 +130,19 @@ public class MyAccessControlFilter extends AccessControlFilter {
     private void onLoginFail(ServletResponse response, String message) throws IOException {
         log.info("设置返回");
         HttpServletResponse httpResponse = (HttpServletResponse) response;
+        httpResponse.setHeader("Content-type", "application/json; charset=utf-8");
         httpResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         ResponseResult result = new ResponseResult();
         result.setSuccess(false);
         result.setMessage(message);
-        httpResponse.getWriter().write(result.toString());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonGenerator jsonGenerator = objectMapper.getJsonFactory()
+                .createJsonGenerator(System.out, JsonEncoding.UTF8);
+
+        //对象转JSON
+        String json = objectMapper.writeValueAsString(result);//返回字符串，输出
+        httpResponse.getWriter().append(json);
 //        httpResponse.sendRedirect("/index");
     }
 

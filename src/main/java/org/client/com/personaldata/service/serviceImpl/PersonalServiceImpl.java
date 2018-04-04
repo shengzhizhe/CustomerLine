@@ -197,11 +197,11 @@ public class PersonalServiceImpl implements PersonalService {
         if (model != null) {
             result.setSuccess(true);
             result.setData(model);
-            result.setMessage("成功");
+            result.setMessage(null);
         } else {
             result.setSuccess(false);
             result.setData(null);
-            result.setMessage("失败");
+            result.setMessage("未获取到数据");
         }
         logger.info(Sl4jToString.info(2,
                 serviceName,

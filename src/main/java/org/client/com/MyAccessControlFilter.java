@@ -68,12 +68,12 @@ public class MyAccessControlFilter extends AccessControlFilter {
         }
 
         //获取所有的消息头名称
-        Enumeration<String> headerNames = httpServletRequest.getHeaderNames();
+//        Enumeration<String> headerNames = httpServletRequest.getHeaderNames();
         //获取获取的消息头名称，获取对应的值，并输出
-        while (headerNames.hasMoreElements()) {
-            String nextElement = headerNames.nextElement();
-            System.out.println(nextElement + ":" + httpServletRequest.getHeader(nextElement));
-        }
+//        while (headerNames.hasMoreElements()) {
+//            String nextElement = headerNames.nextElement();
+//            System.out.println(nextElement + ":" + httpServletRequest.getHeader(nextElement));
+//        }
 
         String token_str = httpServletRequest.getHeader("token");
 //        获取cookie

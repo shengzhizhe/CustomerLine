@@ -1,8 +1,5 @@
 package org.client.com.personaldata.model;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -21,32 +18,32 @@ public class PersonalModel implements Serializable {
     private String portrait;
     //    昵称
 //    @NotBlank(message = "昵称不能为空")
-    @Pattern(regexp = "^[\\u4e00-\\u9fa5\\w\\d]{1,8}$", message = "昵称可以使用字母数字或汉字,最大长度为8位")
+//    @Pattern(regexp = "^[\\u4e00-\\u9fa5\\w\\d]{1,8}$", message = "昵称可以使用字母数字或汉字,最大长度为8位")
     private String nickname;
     //    姓
-    @Pattern(regexp = "^[\\u4e00-\\u9fa5]{1,20}$", message = "姓 必须是汉字,最大长度为20位")
+//    @Pattern(regexp = "^[\\u4e00-\\u9fa5]{1,20}$", message = "姓 必须是汉字,最大长度为20位")
     private String surname;
     //    名
     @Size(max = 20, message = "名 最大长度为20(考虑少数民族)")
-    @Pattern(regexp = "^[\\u4e00-\\u9fa5]{1,20}$", message = "名 必须是汉字,最大长度为20位")
+//    @Pattern(regexp = "^[\\u4e00-\\u9fa5]{1,20}$", message = "名 必须是汉字,最大长度为20位")
     private String name;
     //    手机
 //    @NotBlank(message = "手机不能为空")
-    @Pattern(regexp = "^[1][3,4,5,6,7,8,9][0-9]{9}$", message = "请输入正确的手机号格式")
+//    @Pattern(regexp = "^[1][3,4,5,6,7,8,9][0-9]{9}$", message = "请输入正确的手机号格式")
     private String phone;
     //    身份证号,支持15位和18位验证
 //    @NotBlank(message = "身份证号必须填写")
-    @Pattern(regexp = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)", message = "请输入正确的身份证格式")
+//    @Pattern(regexp = "(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)", message = "请输入正确的身份证格式")
     private String idno;
     //    性别 Y:男 N:女
 //    @NotBlank(message = "性别不能为空")
-    @Pattern(regexp = "[Y,N]", message = "不支持第三性别")
+//    @Pattern(regexp = "[Y,N]", message = "不支持第三性别")
     private String sex;
     //    地址
     @Size(max = 200, message = "地址最大长度为200位")
     private String address;
     //    qq
-    @Pattern(regexp = "^[\\d]{5,12}$", message = "请输入正确格式的qq")
+//    @Pattern(regexp = "^[\\d]{5,12}$", message = "请输入正确格式的qq")
     private String qq;
     //    微信
     @Size(max = 200, message = "微信最大长度为200位")

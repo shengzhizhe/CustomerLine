@@ -65,11 +65,11 @@ public class PersonalServiceImpl implements PersonalService {
         switch (i) {
             case 1:
                 result.setSuccess(true);
-                result.setMessage("成功");
+                result.setMessage("数据更新成功");
                 break;
             default:
                 result.setSuccess(false);
-                result.setMessage("失败");
+                result.setMessage("数据更新失败");
         }
         result.setData(null);
         logger.info(Sl4jToString.info(2,

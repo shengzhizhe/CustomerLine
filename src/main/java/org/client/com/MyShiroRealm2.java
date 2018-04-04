@@ -11,7 +11,6 @@ import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
 import org.client.com.login.service.impl.AccountServiceImpl;
 import org.client.com.login.service.impl.TokenServiceImpl;
-import org.client.com.util.base64.Base64Util;
 import org.client.com.util.resultJson.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,23 +45,23 @@ public class MyShiroRealm2 extends AuthorizingRealm {
             throw new UnknownAccountException();
         }
         TokenService tokenService = new TokenServiceImpl();
-        ResponseResult<TokenModel> result = tokenService.getByToken(myToken.getSignature());
+        ResponseResult<TokenModel> result = tokenService.getByToken2(myToken.getSignature());
         if (result.isSuccess()) {
 //            如果token存在判断是否过期
-            long now_times = System.currentTimeMillis();
-            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
-//                密钥过期,请从新登录;
-                log.info("令牌过期");
-                throw new UnknownAccountException();
-            }
-
-//            判断是否是作废的令牌
-            if (result.getData().getIsUse().equals("Y")) {
-//                令牌已作废
-                log.info("令牌已用过");
-                throw new UnknownAccountException();
-            }
-            myToken.setUsername(result.getData().getAccount());
+//            long now_times = System.currentTimeMillis();
+//            if (result.getData().getEndTimes() <= 0 || result.getData().getEndTimes() < now_times) {
+////                密钥过期,请从新登录;
+//                log.info("令牌过期");
+//                throw new UnknownAccountException();
+//            }
+//
+////            判断是否是作废的令牌
+//            if (result.getData().getIsUse().equals("Y")) {
+////                令牌已作废
+//                log.info("令牌已用过");
+//                throw new UnknownAccountException();
+//            }
+//            myToken.setUsername(result.getData().getAccount());
             return new SimpleAuthenticationInfo(
                     myToken,
                     myToken.getSignature(),
@@ -71,11 +70,12 @@ public class MyShiroRealm2 extends AuthorizingRealm {
         } else {
             if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
                 AccountService accountService = new AccountServiceImpl();
-                ResponseResult<LoginModel> account = accountService.getByAccount(myToken.getUsername());
+                ResponseResult<LoginModel> account = accountService.getByAccount2(myToken.getUsername());
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),
-                            Base64Util.decode(account.getData().getPassword()),
+//                            Base64Util.decode(account.getData().getPassword()),
+                            myToken.getSignature(),
                             getName()
                     );
                 else

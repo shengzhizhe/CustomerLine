@@ -1,6 +1,5 @@
 package org.client.com.register.controller;
 
-import feign.FeignException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.login.model.LoginModel;
@@ -37,39 +36,29 @@ public class RegisterController {
     public ResponseResult<RegisterModel> register(@Valid @RequestBody RegisterModel model,
                                                   BindingResult bindingResult) {
         ResponseResult<RegisterModel> result = new ResponseResult<>();
-        try {
-            if (bindingResult.hasErrors()) {
-                result.setSuccess(false);
-                result.setMessage(bindingResult.getFieldError().getDefaultMessage());
-                return result;
-            }
-            if (!model.isPass()) {
-                result.setSuccess(false);
-                result.setMessage("两次输入的密码不一致");
-                return result;
-            }
-
-            LoginModel model1 = new LoginModel();
-            model1.setUsername(model.getAccount());
-            model1.setPassword(model.getPassword());
-
-            ResponseResult<LoginModel> responseResult = accountService.add(model1);
-            if (responseResult.isSuccess()) {
-                result.setSuccess(true);
-                result.setMessage("注册成功");
-                return result;
-            } else {
-                result.setSuccess(false);
-                result.setMessage(responseResult.getMessage());
-                return result;
-            }
-        } catch (FeignException f) {
+        if (bindingResult.hasErrors()) {
             result.setSuccess(false);
-            result.setMessage("服务通讯异常");
+            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
             return result;
-        } catch (Exception e) {
+        }
+        if (!model.isPass()) {
             result.setSuccess(false);
-            result.setMessage("其它异常，请联系管理员");
+            result.setMessage("两次输入的密码不一致");
+            return result;
+        }
+
+        LoginModel model1 = new LoginModel();
+        model1.setUsername(model.getAccount());
+        model1.setPassword(model.getPassword());
+
+        ResponseResult<LoginModel> responseResult = accountService.add(model1);
+        if (responseResult.isSuccess()) {
+            result.setSuccess(true);
+            result.setMessage("注册成功");
+            return result;
+        } else {
+            result.setSuccess(false);
+            result.setMessage(responseResult.getMessage());
             return result;
         }
     }

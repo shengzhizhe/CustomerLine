@@ -37,7 +37,7 @@ public class AccountServiceImpl implements AccountService {
                 model.toString(),
                 200,
                 null));
-        LoginModel model1 = mapper.getByAccount(model.getUsername());
+        LoginModel model1 = mapper.getByUsername(model.getUsername());
         if (model1 != null) {
             result.setSuccess(false);
             result.setMessage("账号重复");
@@ -114,7 +114,7 @@ public class AccountServiceImpl implements AccountService {
                 id,
                 200,
                 null));
-        LoginModel model = mapper.getById(id);
+        LoginModel model = mapper.getByUsername(id);
         if (model != null) {
             result.setSuccess(true);
             result.setMessage(null);
@@ -142,7 +142,7 @@ public class AccountServiceImpl implements AccountService {
                 account,
                 200,
                 null));
-        LoginModel model = mapper.getByAccount(account);
+        LoginModel model = mapper.getByUsername(account);
         if (model != null) {
             result.setSuccess(true);
             result.setData(model);
@@ -156,6 +156,16 @@ public class AccountServiceImpl implements AccountService {
                 result.toString(),
                 result.getCode(),
                 result.getMessage()));
+        return result;
+    }
+
+    @Override
+    public ResponseResult<LoginModel> getByAccount2(String account) {
+        ResponseResult<LoginModel> result = new ResponseResult<>();
+        if (account != null && !account.trim().equals(""))
+            result.setSuccess(true);
+        else
+            result.setSuccess(false);
         return result;
     }
 

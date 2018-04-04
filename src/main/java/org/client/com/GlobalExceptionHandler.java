@@ -1,6 +1,7 @@
 package org.client.com;
 
 import feign.FeignException;
+import org.apache.ibatis.reflection.ReflectionException;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -268,13 +269,25 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = IllegalArgumentException.class)
     @ResponseBody
     public ResponseResult illegalArgumentException(HttpServletRequest request,
-                                             Exception exception) throws Exception {
+                                                   Exception exception) throws Exception {
         log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
         return new ResponseResult<>(false, "参数异常");
+    }
+
+    @ExceptionHandler(value = ReflectionException.class)
+    @ResponseBody
+    public ResponseResult reflectionException(HttpServletRequest request,
+                                              Exception exception) throws Exception {
+        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
+        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
+        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
+        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
+        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
+        return new ResponseResult<>(false, "字段异常");
     }
 
 }

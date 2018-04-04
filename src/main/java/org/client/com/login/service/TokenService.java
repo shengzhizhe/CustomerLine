@@ -10,4 +10,5 @@ public interface TokenService {
     ResponseResult<TokenModel> updateToken(String token);
 
     ResponseResult<TokenModel> getByToken(String token);
+    ResponseResult<TokenModel> getByToken2(String token);
 }

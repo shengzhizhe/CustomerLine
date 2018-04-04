@@ -81,7 +81,7 @@ public class TokenServiceImpl implements TokenService {
                 token,
                 200,
                 null));
-        TokenModel model = mapper.getByToken(token);
+        TokenModel model = this.mapper.getByToken(token);
         if (model != null) {
             result.setSuccess(true);
             result.setData(model);
@@ -95,6 +95,16 @@ public class TokenServiceImpl implements TokenService {
                 result.toString(),
                 result.getCode(),
                 result.getMessage()));
+        return result;
+    }
+
+    @Override
+    public ResponseResult<TokenModel> getByToken2(String token) {
+        ResponseResult<TokenModel> result = new ResponseResult<>();
+        if (token != null && !token.trim().equals(""))
+            result.setSuccess(true);
+        else
+            result.setSuccess(false);
         return result;
     }
 }

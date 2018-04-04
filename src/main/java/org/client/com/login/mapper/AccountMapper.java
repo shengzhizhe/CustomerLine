@@ -20,45 +20,33 @@ public interface AccountMapper {
      * @return int
      */
     @Insert({
-            "insert into " + tableName + " (uuid,account,password,acctype,source,authorization,times,level) " +
-                    "values (#{model.uuid},#{model.account},#{model.password},#{model.acctype}," +
-                    "#{model.source},#{model.authorization},#{model.times},#{model.level})"
+            "insert into " + tableName + " (username,password,types) " +
+                    "values (#{model.username},#{model.password},#{model.types})"
     })
     int add(@Param("model") LoginModel model);
 
     /**
      * 修改密码
      *
-     * @param account  String
+     * @param username String
      * @param password String
      * @return int
      */
     @Update({
-            "update" + tableName + " set password = #{password} where account = #{account}"
+            "update" + tableName + " set password = #{password} where username = #{username}"
     })
-    int putPWD(@Param("account") String account, @Param("password") String password);
+    int putPWD(@Param("username") String username, @Param("password") String password);
 
     /**
-     * 根据id获取实体
+     * 根据username获取实体
      *
-     * @param id String
+     * @param username String
      * @return AccountModel
      */
     @Select({
-            "select * from " + tableName + " where uuid = #{id}"
+            "select * from " + tableName + " where username = #{username}"
     })
-    LoginModel getById(@Param("id") String id);
-
-    /**
-     * 根据账户获取实体
-     *
-     * @param account String
-     * @return AccountModel
-     */
-    @Select({
-            "select * from " + tableName + " where account=#{account}"
-    })
-    LoginModel getByAccount(@Param("account") String account);
+    LoginModel getByUsername(@Param("username") String username);
 
     /**
      * 获取所有的指定类型的账户
@@ -71,13 +59,13 @@ public interface AccountMapper {
     Page<LoginModel> findAllPage(@Param("type") String type, @Param("account") String account);
 
     /**
-     * 根据id删除实体
+     * 根据username删除实体
      *
-     * @param id String
+     * @param username String
      * @return int
      */
     @Delete({
-            "delete from account_table where uuid = #{id}"
+            "delete from account_table where username = #{username}"
     })
-    int del(@Param("id") String id);
+    int del(@Param("username") String username);
 }

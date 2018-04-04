@@ -144,6 +144,8 @@ public class MyAccessControlFilter extends AccessControlFilter {
         log.info("设置返回");
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         httpResponse.setHeader("Content-type", "application/json; charset=utf-8");
+        httpResponse.setHeader("Access-Control-Expose-Headers", "token");
+        httpResponse.setHeader("token", "logout");
         httpResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         ResponseResult result = new ResponseResult();
         result.setSuccess(false);

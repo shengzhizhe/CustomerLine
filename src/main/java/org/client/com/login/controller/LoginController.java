@@ -82,12 +82,15 @@ public class LoginController {
             tokenModel.setUuid(GetUuid.getUUID());
             ResponseResult<TokenModel> result1 = tokenService.add(tokenModel);
             if (result1.isSuccess()) {
-                Cookie cookie = new Cookie("token", tokenModel.getToken());
-                cookie.setPath("/");
-                cookie.setMaxAge(60);
-                response.addCookie(cookie);
+//                用cookie方式
+//                Cookie cookie = new Cookie("token", tokenModel.getToken());
+//                cookie.setPath("/");
+//                cookie.setMaxAge(60);
+//                response.addCookie(cookie);
+//                用头部信息方式
+                response.setHeader("token", tokenModel.getToken());
                 result.setSuccess(true);
-                result.setMessage("登录成功");
+                result.setMessage(tokenModel.getToken());
                 return result;
             } else {
                 result.setSuccess(false);

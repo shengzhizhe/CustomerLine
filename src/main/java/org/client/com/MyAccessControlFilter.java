@@ -11,13 +11,11 @@ import org.client.com.login.service.TokenService;
 import org.client.com.login.service.impl.TokenServiceImpl;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -69,19 +67,24 @@ public class MyAccessControlFilter extends AccessControlFilter {
             request.setAttribute(paraName, s);
         }
 
+        String token_str = httpServletRequest.getHeader("token");
 //        获取cookie
-        Cookie[] cookies = httpServletRequest.getCookies();
-        String token_str = "";
-        if (cookies != null) {
-            for (int i = 0; i < cookies.length; i++) {
-                if (cookies[i].getName().equals("token")) {
-                    token_str = cookies[i].getValue();
-                    continue;
-                }
-            }
-        } else {
-            log.info("为获取到cookie");
-            onLoginFail(response, "非法的密匙");
+//        Cookie[] cookies = httpServletRequest.getCookies();
+//        if (cookies != null) {
+//            for (int i = 0; i < cookies.length; i++) {
+//                if (cookies[i].getName().equals("token")) {
+//                    token_str = cookies[i].getValue();
+//                    continue;
+//                }
+//            }
+//        } else {
+//            log.info("为获取到cookie");
+//            onLoginFail(response, "非法的密匙");
+//            return false;
+//        }
+        if (token_str == null || token_str.trim().equals("")) {
+            log.info("未获取头部信息");
+            onLoginFail(response, "非法的请求");
             return false;
         }
 //验证用户和令牌的有效性(此处应该根据uuid取缓存数据然后判断令牌时候有效)
@@ -111,11 +114,12 @@ public class MyAccessControlFilter extends AccessControlFilter {
             tokenModel.setUuid(GetUuid.getUUID());
             ResponseResult<TokenModel> result = tokenService.add2(tokenModel);
             if (result.isSuccess()) {
-                Cookie cookie = new Cookie("token", tokenModel.getToken());
-                cookie.setPath("/");
-                cookie.setMaxAge(60);
+//                Cookie cookie = new Cookie("token", tokenModel.getToken());
+//                cookie.setPath("/");
+//                cookie.setMaxAge(60);
+//                httpServletResponse.addCookie(cookie);
                 HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-                httpServletResponse.addCookie(cookie);
+                httpServletResponse.setHeader("token", tokenModel.getToken());
                 return true;
             } else
                 return false;

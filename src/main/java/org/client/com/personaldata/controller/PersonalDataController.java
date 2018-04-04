@@ -7,7 +7,10 @@ import org.client.com.personaldata.service.PersonalService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author ld
@@ -41,7 +44,16 @@ public class PersonalDataController {
     @RequestMapping(value = "/personalData", method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseResult<PersonalModel> update(@RequestBody PersonalModel model) {
+    public ResponseResult<PersonalModel> update(@Valid @RequestBody PersonalModel model,
+                                                BindingResult bindingResult) {
+        //数据验证
+        if (bindingResult.hasErrors()) {
+            ResponseResult<PersonalModel> result = new ResponseResult<>();
+            result.setSuccess(false);
+            result.setData(model);
+            result.setMessage(bindingResult.getFieldError().getDefaultMessage());
+            return result;
+        }
         return personalService.update(model);
     }
 }

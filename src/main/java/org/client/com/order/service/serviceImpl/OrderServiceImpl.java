@@ -31,6 +31,7 @@ public class OrderServiceImpl implements OrderService {
                 account,
                 result.getCode(),
                 null));
+        account = "%"+account+"%";
         Page<OrderModel> all = mapper.findAllByAccount(account);
         if(all.size()>0){
             result.setData(all);
@@ -52,6 +53,30 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public int add(OrderModel model) {
+        ResponseResult result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getAccount(),
+                result.getCode(),
+                null));
+        int add = mapper.addOrder(model);
+        int i = mapper.addOrderSp(model);
+        if(add>0){
+            result.setData(add);
+            result.setSuccess(true);
+        }else{
+            result.setSuccess(false);
+            result.setMessage("未找到订单");
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getAccount(),
+                result.getCode(),
+                null));
         return 0;
     }
 }

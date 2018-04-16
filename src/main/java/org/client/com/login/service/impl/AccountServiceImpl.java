@@ -162,10 +162,16 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public ResponseResult<LoginModel> getByAccount2(String account) {
+    public ResponseResult<LoginModel> getByAccount2(String account, String types) {
+        int type = 0;
+        if (types.equals("cus"))
+            type = 1;
+        if (types.equals("admin"))
+            type = 2;
         ResponseResult<LoginModel> result = new ResponseResult<>();
         JDBC jdbc = new JDBC();
-        List<LoginModel> models = jdbc.queryToken2("select * from account_table where username = '" + account + "'");
+        List<LoginModel> models = jdbc.queryToken2("select * from account_table where username = '" + account + "'" +
+                " where types = " + type);
         if (models.size() > 0) {
             result.setSuccess(true);
             result.setData(models.get(0));

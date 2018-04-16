@@ -65,7 +65,7 @@ public class MyShiroRealm3 extends AuthorizingRealm {
         } else {
             if (myToken.getUsername() != null && !myToken.getUsername().isEmpty()) {
                 AccountService accountService = new AccountServiceImpl();
-                ResponseResult<LoginModel> account = accountService.getByAccount2(myToken.getUsername());
+                ResponseResult<LoginModel> account = accountService.getByAccount2(myToken.getUsername(),myToken.getType());
                 if (account.isSuccess())
                     return new SimpleAuthenticationInfo(
                             account.getData(),

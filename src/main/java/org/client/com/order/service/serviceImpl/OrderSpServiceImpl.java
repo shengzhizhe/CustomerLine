@@ -13,10 +13,11 @@ public class OrderSpServiceImpl implements OrderSpService {
 
     @Override
     public int update(OrderSpModel model) {
-        OrderSpDao dao = new OrderSpDaoImpl();
-        StringJoiner sql = new StringJoiner("");
-        sql.add("update order_table set zt='" + model.getZt() + "' where uuid = '" + model.getUuid() + "'");
-        logger.info(sql.toString());
-        return dao.data(sql.toString());
+//        OrderSpDao dao = new OrderSpDaoImpl();
+//        StringJoiner sql = new StringJoiner("");
+//        sql.add("update order_table set zt='" + model.getZt() + "' where uuid = '" + model.getUuid() + "'");
+//        logger.info(sql.toString());
+//        return dao.data(sql.toString());
+        return 0;
     }
 }

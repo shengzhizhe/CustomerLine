@@ -1,6 +1,5 @@
 package org.client.com;
 
-import feign.FeignException;
 import org.apache.ibatis.reflection.ReflectionException;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthenticatedException;
@@ -242,29 +241,29 @@ public class GlobalExceptionHandler {
         return new ResponseResult<>(false, "class重复");
     }
 
-    @ExceptionHandler(value = FeignException.class)
-    @ResponseBody
-    public ResponseResult feignException(HttpServletRequest request,
-                                         Exception exception) throws Exception {
-        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
-        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
-        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
-        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
-        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
-        return new ResponseResult<>(false, "服务链接异常");
-    }
-
-    @ExceptionHandler(value = feign.RetryableException.class)
-    @ResponseBody
-    public ResponseResult retryableException(HttpServletRequest request,
-                                             Exception exception) throws Exception {
-        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
-        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
-        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
-        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
-        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
-        return new ResponseResult<>(false, "服务链接超时");
-    }
+//    @ExceptionHandler(value = FeignException.class)
+//    @ResponseBody
+//    public ResponseResult feignException(HttpServletRequest request,
+//                                         Exception exception) throws Exception {
+//        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
+//        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
+//        return new ResponseResult<>(false, "服务链接异常");
+//    }
+//
+//    @ExceptionHandler(value = feign.RetryableException.class)
+//    @ResponseBody
+//    public ResponseResult retryableException(HttpServletRequest request,
+//                                             Exception exception) throws Exception {
+//        log.debug("ERROR::::：" + exception.getLocalizedMessage() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + exception.getCause() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
+//        log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
+//        log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
+//        return new ResponseResult<>(false, "服务链接超时");
+//    }
 
     @ExceptionHandler(value = IllegalArgumentException.class)
     @ResponseBody

@@ -20,7 +20,7 @@ public class LoginModel implements Serializable {
     private String password;
 
     private String yzm;
-
+//0:user 1:cus 2:admin
     private int types;
 
     public LoginModel() {

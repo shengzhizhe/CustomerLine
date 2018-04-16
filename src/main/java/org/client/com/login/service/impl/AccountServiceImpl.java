@@ -171,7 +171,7 @@ public class AccountServiceImpl implements AccountService {
         ResponseResult<LoginModel> result = new ResponseResult<>();
         JDBC jdbc = new JDBC();
         List<LoginModel> models = jdbc.queryToken2("select * from account_table where username = '" + account + "'" +
-                " where types = " + type);
+                " and types = " + type);
         if (models.size() > 0) {
             result.setSuccess(true);
             result.setData(models.get(0));

@@ -40,7 +40,8 @@ public interface AccountService {
      * @return
      */
     ResponseResult<LoginModel> getByAccount(String account);
-    ResponseResult<LoginModel> getByAccount2(String account);
+
+    ResponseResult<LoginModel> getByAccount2(String account, String types);
 
     /**
      * 根据类型获取账户

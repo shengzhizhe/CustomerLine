@@ -23,7 +23,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.util.Enumeration;
 
 /**
  * login
@@ -64,11 +63,16 @@ public class LoginController {
             result.setMessage(bindingResult.getFieldError().getDefaultMessage());
             return result;
         }
+        String types = "user";
+        if (model.getTypes() == 1)
+            types = "cus";
+        if (model.getTypes() == 2)
+            types = "admin";
 
         //验证用户和令牌的有效性
         MyUsernamePasswordToken token = new MyUsernamePasswordToken(model.getUsername(),
 //此处决定此方法只能用于普通用户
-                "user",
+                types,
                 Base64Util.encode(model.getPassword()));
         Subject subject = SecurityUtils.getSubject();
         try {

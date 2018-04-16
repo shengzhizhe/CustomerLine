@@ -20,13 +20,13 @@ import org.springframework.context.annotation.Configuration;
  * 用于判断user
  */
 @Configuration
-public class MyShiroRealm2 extends AuthorizingRealm {
+public class MyShiroRealm3 extends AuthorizingRealm {
 
-    private static final Logger log = LoggerFactory.getLogger(MyShiroRealm2.class);
+    private static final Logger log = LoggerFactory.getLogger(MyShiroRealm3.class);
 
     @Override
     public String getName() {
-        return "user";
+        return "cus";
     }
 
     //认证

@@ -67,29 +67,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
             request.setAttribute(paraName, s);
         }
 
-        //获取所有的消息头名称
-//        Enumeration<String> headerNames = httpServletRequest.getHeaderNames();
-        //获取获取的消息头名称，获取对应的值，并输出
-//        while (headerNames.hasMoreElements()) {
-//            String nextElement = headerNames.nextElement();
-//            System.out.println(nextElement + ":" + httpServletRequest.getHeader(nextElement));
-//        }
-
         String token_str = httpServletRequest.getHeader("token");
-//        获取cookie
-//        Cookie[] cookies = httpServletRequest.getCookies();
-//        if (cookies != null) {
-//            for (int i = 0; i < cookies.length; i++) {
-//                if (cookies[i].getName().equals("token")) {
-//                    token_str = cookies[i].getValue();
-//                    continue;
-//                }
-//            }
-//        } else {
-//            log.info("为获取到cookie");
-//            onLoginFail(response, "非法的密匙");
-//            return false;
-//        }
         if (token_str == null || token_str.trim().equals("")) {
             log.info("未获取头部信息");
             onLoginFail(response, "非法的请求");
@@ -115,17 +93,12 @@ public class MyAccessControlFilter extends AccessControlFilter {
 //        新的token
 //        保存进库
             TokenModel tokenModel = new TokenModel();
-//            tokenModel.setAccount("account");
-            tokenModel.setEndTimes(System.currentTimeMillis() * (1000 * 60 * 5));
+            tokenModel.setEndTimes(System.currentTimeMillis() * (1000 * 60 * 60 * 24));
             tokenModel.setIsUse("N");
             tokenModel.setToken(GetUuid.getUUID());
             tokenModel.setUuid(GetUuid.getUUID());
             ResponseResult<TokenModel> result = tokenService.add2(tokenModel);
             if (result.isSuccess()) {
-//                Cookie cookie = new Cookie("token", tokenModel.getToken());
-//                cookie.setPath("/");
-//                cookie.setMaxAge(60);
-//                httpServletResponse.addCookie(cookie);
                 HttpServletResponse httpServletResponse = (HttpServletResponse) response;
                 httpServletResponse.setHeader("Access-Control-Expose-Headers", "token");
                 httpServletResponse.setHeader("token", tokenModel.getToken());

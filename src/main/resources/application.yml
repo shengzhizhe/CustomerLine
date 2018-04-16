@@ -1,6 +1,6 @@
 ﻿#端口
 server: 
-  port: 8998
+  port: 9002
   tomcat: 
     uri-encoding: UTF-8
 spring:
@@ -11,7 +11,7 @@ spring:
     cache: false
 #  database
   datasource:
-      url: jdbc:mysql://192.168.1.130:3306/jpt2?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://192.168.1.130:3306/jpt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver

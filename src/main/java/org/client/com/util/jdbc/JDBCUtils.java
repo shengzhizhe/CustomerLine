@@ -92,7 +92,7 @@ public class JDBCUtils {
             //实际应该这样写(由于对应的应用程序中有一个对应的静态代码块，自动回将驱动的类对象进行驱动加载)
             //DriverManager.registerDriver((Driver) Class.forName(driverClass).newInstance());
 
-            conn = DriverManager.getConnection(jdbcUrl, user, password);
+            conn = DriverManager.getConnection(jdbcUrl+"?useUnicode=true&characterEncoding=utf-8&useSSL=false", user, password);
 
         } catch (IOException e) {
             // TODO Auto-generated catch block

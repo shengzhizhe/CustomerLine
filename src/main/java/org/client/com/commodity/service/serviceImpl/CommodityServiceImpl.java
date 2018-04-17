@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * logger.info(Sl4jToString.info(1,
  * serviceName,
@@ -83,6 +85,42 @@ public class CommodityServiceImpl implements CommodityService {
                 result.getCode(),
                 null));
         return result;
+    }
+
+    @Override
+    public ResponseResult<List<CommodityModel>> getByName(String name) {
+        ResponseResult<List<CommodityModel>> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                name+"",
+                result.getCode(),
+                null));
+        name = "%"+name+"%";
+        List<CommodityModel> allByPage = mapper.getByName(name);
+        if(allByPage.size()>0){
+            result.setSuccess(true);
+            result.setData(allByPage);
+            result.setMessage("成功");
+        }else {
+            result.setSuccess(false);
+            result.setMessage("未查询到相关商品");
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                name+"",
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public List<CommodityModel> findSixByLm(String lm) {
+        List<CommodityModel> sixByLm = mapper.findSixByLm(lm);
+        return sixByLm;
     }
 
 

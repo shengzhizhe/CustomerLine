@@ -26,7 +26,7 @@ public class CommodityModel {
     private String busid;
     //商品数量
      private int sl;
-     //商品类目
+     //商品类目   1：食品  2：烟酒饮品  3：日用百货  4：调料锅底   5:玩具   6：体育用品   7：办公用品
      private String lm;
      //商品上架、下架 0:上架，1：下架
     private int sxj;

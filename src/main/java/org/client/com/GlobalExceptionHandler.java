@@ -154,6 +154,7 @@ public class GlobalExceptionHandler {
         log.debug("ERROR::::：" + Arrays.toString(exception.getSuppressed()) + "::::::" + new Date());
         log.debug("ERROR::::：" + exception.getMessage() + "::::::" + new Date());
         log.debug("ERROR::::：" + Arrays.toString(exception.getStackTrace()) + "::::::" + new Date());
+        exception.printStackTrace();
         return new ResponseResult<>(false, "输入输出错误");
     }
 

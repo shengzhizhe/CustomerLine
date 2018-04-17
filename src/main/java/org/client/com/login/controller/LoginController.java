@@ -54,8 +54,7 @@ public class LoginController {
     public ResponseResult<LoginModel> login(
             @Valid @RequestBody LoginModel model,
             BindingResult bindingResult,
-            HttpServletResponse response,
-            HttpServletRequest request) {
+            HttpServletResponse response) {
 
         ResponseResult<LoginModel> result = new ResponseResult<>();
         if (bindingResult.hasErrors()) {

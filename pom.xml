@@ -149,11 +149,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.vaadin.external.google</groupId>
-            <artifactId>android-json</artifactId>
-            <version>RELEASE</version>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
         <dependency>

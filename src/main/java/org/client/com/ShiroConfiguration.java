@@ -79,6 +79,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/configuration/**", "anon");
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/", "anon");
+        filterChainDefinitionMap.put("/api/**", "anon");
 
         filterChainDefinitionMap.put("/defaultKaptcha", "anon");
 

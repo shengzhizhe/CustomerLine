@@ -50,6 +50,7 @@ public class RegisterController {
         LoginModel model1 = new LoginModel();
         model1.setUsername(model.getAccount());
         model1.setPassword(model.getPassword());
+        model1.setTypes(0);
 
         ResponseResult<LoginModel> responseResult = accountService.add(model1);
         if (responseResult.isSuccess()) {

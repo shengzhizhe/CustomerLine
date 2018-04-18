@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ import java.util.List;
  * null));
  */
 @Service
+@Transactional
 public class CommodityServiceImpl implements CommodityService {
 
     private static Logger logger = LoggerFactory.getLogger(CommodityServiceImpl.class);
@@ -59,6 +61,37 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
+    public ResponseResult<Page<CommodityModel>> page(int pageNow, int pageSize,String account) {
+        ResponseResult<Page<CommodityModel>> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                pageNow + ":" + pageSize ,
+                result.getCode(),
+                null));
+        PageHelper.startPage(pageNow, pageSize);
+        Page<CommodityModel> all = mapper.findAll(account);
+        if(all.size()>0){
+            result.setSuccess(true);
+            result.setData(all);
+            result.setMessage("成功");
+        }else {
+            result.setSuccess(false);
+            result.setMessage("未查询到商品");
+            result.setData(null);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                pageNow + ":" + pageSize ,
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
     public ResponseResult<CommodityModel> getByUuid(String uuid) {
         ResponseResult<CommodityModel> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
@@ -76,6 +109,58 @@ public class CommodityServiceImpl implements CommodityService {
             result.setSuccess(true);
             result.setMessage("成功");
             result.setData(byName);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                uuid + "",
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public ResponseResult add(CommodityModel model) {
+        ResponseResult<CommodityModel> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getUuid() + "",
+                result.getCode(),
+                null));
+        int add = mapper.add(model);
+        if(add==1){
+            result.setSuccess(true);
+        }else {
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getUuid() + "",
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public ResponseResult del(String uuid) {
+        ResponseResult<CommodityModel> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                uuid + "",
+                result.getCode(),
+                null));
+        int del = mapper.del(uuid);
+        if(del==1){
+            result.setSuccess(true);
+        }else {
+            result.setSuccess(false);
         }
         logger.info(Sl4jToString.info(
                 2,
@@ -121,6 +206,32 @@ public class CommodityServiceImpl implements CommodityService {
     public List<CommodityModel> findSixByLm(String lm) {
         List<CommodityModel> sixByLm = mapper.findSixByLm(lm);
         return sixByLm;
+    }
+
+    @Override
+    public ResponseResult update(CommodityModel model) {
+        ResponseResult<CommodityModel> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getCname()+"",
+                result.getCode(),
+                null));
+        int update = mapper.update(model);
+        if(update==1){
+            result.setSuccess(true);
+        }else {
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                model.getCname()+"",
+                result.getCode(),
+                null));
+        return result;
     }
 
 

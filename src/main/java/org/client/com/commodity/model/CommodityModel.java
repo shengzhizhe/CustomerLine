@@ -1,8 +1,12 @@
 package org.client.com.commodity.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * @name 商品资料
  * @table business_commodity_table
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CommodityModel {
     //商品主键
     private String uuid;

@@ -1,5 +1,7 @@
 package org.client.com.order.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @table ordersp_table
  * @remarks
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderSpModel implements Serializable {
 
     private String uuid;

@@ -1,9 +1,12 @@
 package org.client.com.order.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * 订单资料
  * customer_order_table
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderModel {
     //主键
     private String uuid;

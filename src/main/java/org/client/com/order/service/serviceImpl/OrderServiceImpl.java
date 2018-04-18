@@ -2,6 +2,7 @@ package org.client.com.order.service.serviceImpl;
 
 
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.client.com.order.mapper.OrderMapper;
 import org.client.com.order.model.OrderModel;
 import org.client.com.order.service.OrderService;
@@ -9,10 +10,11 @@ import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.sl4j.Sl4jToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.logging.Logger;
-
+@Service
 public class OrderServiceImpl implements OrderService {
 
     private static Logger logger = Logger.getLogger(OrderServiceImpl.class.toString());
@@ -22,7 +24,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderMapper mapper;
 
     @Override
-    public List<OrderModel> findAllByAccount(String account) {
+    public ResponseResult<Page<OrderModel>> findAllByAccount(String account) {
         ResponseResult<Page<OrderModel>> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -31,7 +33,6 @@ public class OrderServiceImpl implements OrderService {
                 account,
                 result.getCode(),
                 null));
-        account = "%"+account+"%";
         Page<OrderModel> all = mapper.findAllByAccount(account);
         if(all.size()>0){
             result.setData(all);
@@ -48,11 +49,11 @@ public class OrderServiceImpl implements OrderService {
                 result.getCode(),
                 null));
 
-        return null;
+        return result;
     }
 
     @Override
-    public int add(OrderModel model) {
+    public ResponseResult add(OrderModel model) {
         ResponseResult result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -77,6 +78,65 @@ public class OrderServiceImpl implements OrderService {
                 model.getAccount(),
                 result.getCode(),
                 null));
-        return 0;
+        return result;
+    }
+
+    @Override
+    public ResponseResult del(String uuid) {
+        ResponseResult result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                uuid,
+                result.getCode(),
+                null));
+        int del = mapper.del(uuid);
+        if(del==0){
+            result.setSuccess(true);
+        }else{
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                uuid,
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public ResponseResult<Page<OrderModel>> page(int pageNum, int pageSize, String account,String type) {
+        ResponseResult<Page<OrderModel>> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        PageHelper.startPage(pageNum,pageSize);
+        Page<OrderModel> page = new Page<>();
+        if(type==null||"".equals(type)){
+            page = mapper.page(account);
+        }else {
+            page = mapper.page1(account,type);
+        }
+        if(page.size()>0){
+            result.setSuccess(true);
+            result.setData(page);
+        }else{
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        return result;
     }
 }

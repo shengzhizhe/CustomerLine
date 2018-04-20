@@ -10,9 +10,13 @@ public interface OrderService {
 
     ResponseResult<Page<OrderModel>> findAllByAccount(String account);
 
+    List<OrderModel> findByType(String account);
+
     ResponseResult add(OrderModel model);
 
-    ResponseResult del(String uuid);
+    ResponseResult updateOrDel(String uuid,int type);
+
+    ResponseResult update(String account);
 
     ResponseResult<Page<OrderModel>> page(int pageNum,int pageSize,String account,String type);
 }

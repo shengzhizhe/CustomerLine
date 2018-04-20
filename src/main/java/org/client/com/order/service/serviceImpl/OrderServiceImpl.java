@@ -53,6 +53,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<OrderModel> findByType(String account) {
+        ResponseResult<List<OrderModel>> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                200,
+                null));
+        List<OrderModel> byType = mapper.findByType(account);
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                200,
+                null));
+        return byType;
+    }
+
+    @Override
     public ResponseResult add(OrderModel model) {
         ResponseResult result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
@@ -82,7 +103,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public ResponseResult del(String uuid) {
+    public ResponseResult updateOrDel(String uuid,int type) {
         ResponseResult result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -91,8 +112,8 @@ public class OrderServiceImpl implements OrderService {
                 uuid,
                 result.getCode(),
                 null));
-        int del = mapper.del(uuid);
-        if(del==0){
+        int del = mapper.updateOrDel(uuid,type);
+        if(del==1){
             result.setSuccess(true);
         }else{
             result.setSuccess(false);
@@ -102,6 +123,32 @@ public class OrderServiceImpl implements OrderService {
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
                 uuid,
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public ResponseResult update(String account) {
+        ResponseResult result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        int update = mapper.update(account);
+        if(update>0){
+            result.setSuccess(true);
+        }else{
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
                 result.getCode(),
                 null));
         return result;

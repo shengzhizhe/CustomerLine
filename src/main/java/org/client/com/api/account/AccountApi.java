@@ -1,6 +1,7 @@
 package org.client.com.api.account;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.Api;
 import org.client.com.login.model.LoginModel;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.AccountService;
@@ -51,7 +52,7 @@ public class AccountApi {
                 //System.out.println(constraintViolation.getPropertyPath()+":"+constraintViolation.getMessage());
             }
             //生成新的token
-            long times = System.currentTimeMillis() + (1000 * 60 * 60*24*30);
+            long times = System.currentTimeMillis() + (1000 * 60 * 60 * 24 * 30);
             TokenModel tokenModel = new TokenModel();
             tokenModel.setToken(GetUuid.getUUID());
             tokenModel.setIsUse("N");
@@ -91,6 +92,64 @@ public class AccountApi {
             e.printStackTrace();
             result.setSuccess(false);
             result.setMessage("登录失败");
+            return result;
+        }
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public ResponseResult update(@RequestParam("pass") String pass, @RequestParam("token") String token) {
+        ResponseResult<String> result = new ResponseResult<>();
+        TokenModel tokenModel = new TokenModel();
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token);
+        LoginModel model = new LoginModel();
+        model.setUsername(byToken.getData().getAccount());
+        model.setPassword(pass);
+        ValidatorFactory vf = Validation.buildDefaultValidatorFactory();
+        Validator validator = vf.getValidator();
+        Set<ConstraintViolation<LoginModel>> set = validator.validate(model);
+        for (ConstraintViolation<LoginModel> constraintViolation : set) {
+            result.setSuccess(false);
+            result.setMessage(constraintViolation.getMessage());
+            return result;
+            //System.out.println(constraintViolation.getPropertyPath()+":"+constraintViolation.getMessage());
+        }
+        if (byToken.isSuccess() && "N".equals(byToken.getData().getIsUse())) {
+            ResponseResult<TokenModel> tokenModelResponseResult = tokenService.updateToken(token);
+            if (tokenModelResponseResult.isSuccess()) {
+                //生成新的token
+                long times = System.currentTimeMillis() + (1000 * 60 * 60 * 24 * 30);
+                tokenModel.setToken(GetUuid.getUUID());
+                tokenModel.setIsUse("N");
+                tokenModel.setEndTimes(times);
+                tokenModel.setAccount(byToken.getData().getAccount());
+                tokenModel.setUuid(GetUuid.getUUID());
+                ResponseResult<TokenModel> result1 = tokenService.add(tokenModel);
+                if (!result1.isSuccess()) {
+                    result.setSuccess(false);
+                    result.setData(token);
+                    result.setMessage("系统繁忙，请稍后再试");
+                    return result;
+                }
+                ResponseResult<LoginModel> upd = accountService.putPWD(model.getUsername(), model.getPassword());
+                if (upd.isSuccess()) {
+                    result.setSuccess(true);
+                    result.setMessage("修改成功");
+                    return result;
+                } else {
+                    result.setSuccess(false);
+                    result.setData(tokenModel.getToken());
+                    result.setMessage("修改失败");
+                    return result;
+                }
+            } else {
+                result.setSuccess(false);
+                result.setData(token);
+                result.setMessage("系统繁忙，请稍后再试");
+                return result;
+            }
+        } else {
+            result.setSuccess(false);
+            result.setMessage("令牌过期，请重新登陆");
             return result;
         }
     }

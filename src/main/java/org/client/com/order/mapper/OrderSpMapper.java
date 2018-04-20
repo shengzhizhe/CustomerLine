@@ -7,6 +7,7 @@ import org.client.com.order.model.OrderSpModel;
 
 public interface OrderSpMapper {
 
-    @Select({"SELECT * FROM ordersp_table WHERE orderid = #{orid}"})
+    @Select({"SELECT o.uuid,c.cname spid,o.spsl,o.spdj,o.spzj,o.orderid,o.zt FROM ordersp_table o LEFT JOIN commodity_table" +
+            " c ON c.uuid = o.spid WHERE orderid = #{orid}"})
     Page<OrderSpModel> page(@Param("orid") String orid);
 }

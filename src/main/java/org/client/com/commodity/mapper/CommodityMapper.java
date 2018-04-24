@@ -36,4 +36,7 @@ public interface CommodityMapper {
 
     @Delete({"DELETE FROM commodity_table WHERE uuid = #{uuid}"})
     int del (@Param("uuid") String uuid);
+
+    @Update({"UPDATE commodity_table SET zt = #{zt} WHERE uuid = #{spid} AND busid = #{account}"})
+    int updateByIdAndAcc (@Param("spid") String spid,@Param("account") String account,@Param("zt") String zt);
 }

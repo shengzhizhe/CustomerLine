@@ -66,19 +66,35 @@ public class CommodityApi {
                         return result;
                         //System.out.println(constraintViolation.getPropertyPath()+":"+constraintViolation.getMessage());
                     }
-                    model.setUuid(GetUuid.getUUID());
                     model.setBusid(byToken.getData().getAccount());
-                    ResponseResult add = service.add(model);
-                    if (add.isSuccess()) {
-                        result.setSuccess(true);
-                        result.setMessage("添加成功");
-                        result.setData("}" + tokenModel.getToken());
-                        return result;
-                    } else {
-                        result.setSuccess(false);
-                        result.setMessage("添加失败");
-                        result.setData(tokenModel.getToken());
-                        return result;
+                    ResponseResult<CommodityModel> byUuid = service.getByUuid(model.getUuid());
+                    if(byUuid.isSuccess()){
+                        model.setZt(byUuid.getData().getZt());
+                        ResponseResult update = service.update(model);
+                        if(update.isSuccess()){
+                            result.setSuccess(true);
+                            result.setMessage("添加成功");
+                            result.setData("}" + tokenModel.getToken());
+                            return result;
+                        } else {
+                            result.setSuccess(false);
+                            result.setMessage("添加失败");
+                            result.setData(tokenModel.getToken());
+                            return result;
+                        }
+                    }else {
+                        ResponseResult add = service.add(model);
+                        if (add.isSuccess()) {
+                            result.setSuccess(true);
+                            result.setMessage("添加成功");
+                            result.setData("}" + tokenModel.getToken());
+                            return result;
+                        } else {
+                            result.setSuccess(false);
+                            result.setMessage("添加失败");
+                            result.setData(tokenModel.getToken());
+                            return result;
+                        }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

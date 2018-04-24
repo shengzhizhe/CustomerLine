@@ -2,6 +2,8 @@ package org.client.com.api.account;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.client.com.commodity.model.CommodityModel;
+import org.client.com.commodity.service.CommodityService;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
@@ -19,8 +21,8 @@ import java.util.logging.Logger;
 @RequestMapping(value = "/upload")
 public class UpdateLoadApi {
     private static Logger logger = Logger.getLogger(UpdateLoadApi.class.toString());
-    @Autowired
-    private AccountService accountService;
+   @Autowired
+   private CommodityService commodityService;
     @Autowired
     private TokenService tokenService;
 
@@ -79,11 +81,39 @@ public class UpdateLoadApi {
                         dest.getParentFile().mkdirs();// 新建文件夹
                     }
                     file.transferTo(dest);// 文件写入
-
-                    result.setSuccess(true);
-                    result.setData("}" + tokenModel.getToken());
-                    result.setMessage("上传成功");
-                    return result;
+                    ResponseResult<CommodityModel> byUuid = commodityService.getByUuid(spid);
+                    if(byUuid.isSuccess()){
+                        ResponseResult responseResult = commodityService.updateByIdAndAcc(spid,
+                                byToken.getData().getAccount(), fileName);
+                        if(responseResult.isSuccess()){
+                            result.setSuccess(true);
+                            result.setData("}" + tokenModel.getToken());
+                            result.setMessage("上传成功");
+                            return result;
+                        }else {
+                            result.setSuccess(false);
+                            result.setData("}" + tokenModel.getToken());
+                            result.setMessage("上传失败,请稍后再试");
+                            return result;
+                        }
+                    }else {
+                        CommodityModel model = new CommodityModel();
+                        model.setUuid(spid);
+                        model.setBusid(byToken.getData().getAccount());
+                        model.setZt(fileName);
+                        ResponseResult add = commodityService.add(model);
+                        if(add.isSuccess()){
+                            result.setSuccess(true);
+                            result.setData("}" + tokenModel.getToken());
+                            result.setMessage("上传成功");
+                            return result;
+                        }else {
+                            result.setSuccess(false);
+                            result.setData("}" + tokenModel.getToken());
+                            result.setMessage("上传失败,请稍后再试");
+                            return result;
+                        }
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                     result.setSuccess(false);

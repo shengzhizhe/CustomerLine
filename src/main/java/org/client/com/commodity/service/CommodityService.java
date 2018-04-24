@@ -22,4 +22,6 @@ public interface CommodityService {
     List<CommodityModel> findSixByLm (String lm);
 
     ResponseResult update(CommodityModel model);
+
+    ResponseResult updateByIdAndAcc (String spid,String account,String zt);
 }

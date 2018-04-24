@@ -104,7 +104,7 @@ public class CommodityServiceImpl implements CommodityService {
         CommodityModel byName = mapper.getByUuid(uuid);
         if (byName == null || "".equals(byName)) {
             result.setSuccess(false);
-            result.setMessage("抱歉，该商品已下架");
+            result.setMessage("抱歉，未查询到该商品");
         } else {
             result.setSuccess(true);
             result.setMessage("成功");
@@ -229,6 +229,32 @@ public class CommodityServiceImpl implements CommodityService {
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
                 model.getCname()+"",
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
+    public ResponseResult updateByIdAndAcc(String spid, String account, String zt) {
+        ResponseResult<String> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                spid+account+zt,
+                result.getCode(),
+                null));
+        int update = mapper.updateByIdAndAcc(spid,account,zt);
+        if(update==1){
+            result.setSuccess(true);
+        }else {
+            result.setSuccess(false);
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                spid+account+zt,
                 result.getCode(),
                 null));
         return result;

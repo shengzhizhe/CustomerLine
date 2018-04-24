@@ -25,14 +25,14 @@ public class OrderController {
         return null;
     }
 
-    @ApiOperation(
-            value = "生成账单",
-            response = ResponseResult.class,
-            httpMethod = "POST"
-    )
-    @PostMapping(value = "/order")
-    public ResponseResult add(@RequestBody OrderModel model){
-        ResponseResult add = service.add(model);
-        return add;
-    }
+//    @ApiOperation(
+//            value = "生成账单",
+//            response = ResponseResult.class,
+//            httpMethod = "POST"
+//    )
+//    @PostMapping(value = "/order")
+//    public ResponseResult add(@RequestBody OrderModel model){
+//        ResponseResult add = service.add(model);
+//        return add;
+//    }
 }

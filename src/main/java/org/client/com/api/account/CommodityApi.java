@@ -3,7 +3,6 @@ package org.client.com.api.account;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.Page;
-import io.swagger.annotations.Api;
 import org.client.com.commodity.model.CommodityModel;
 import org.client.com.commodity.service.CommodityService;
 import org.client.com.login.model.TokenModel;
@@ -66,35 +65,19 @@ public class CommodityApi {
                         return result;
                         //System.out.println(constraintViolation.getPropertyPath()+":"+constraintViolation.getMessage());
                     }
+                    model.setUuid(GetUuid.getUUID());
                     model.setBusid(byToken.getData().getAccount());
-                    ResponseResult<CommodityModel> byUuid = service.getByUuid(model.getUuid());
-                    if(byUuid.isSuccess()){
-                        model.setZt(byUuid.getData().getZt());
-                        ResponseResult update = service.update(model);
-                        if(update.isSuccess()){
-                            result.setSuccess(true);
-                            result.setMessage("添加成功");
-                            result.setData("}" + tokenModel.getToken());
-                            return result;
-                        } else {
-                            result.setSuccess(false);
-                            result.setMessage("添加失败");
-                            result.setData(tokenModel.getToken());
-                            return result;
-                        }
-                    }else {
-                        ResponseResult add = service.add(model);
-                        if (add.isSuccess()) {
-                            result.setSuccess(true);
-                            result.setMessage("添加成功");
-                            result.setData("}" + tokenModel.getToken());
-                            return result;
-                        } else {
-                            result.setSuccess(false);
-                            result.setMessage("添加失败");
-                            result.setData(tokenModel.getToken());
-                            return result;
-                        }
+                    ResponseResult add = service.add(model);
+                    if (add.isSuccess()) {
+                        result.setSuccess(true);
+                        result.setMessage("添加成功");
+                        result.setData("}" + tokenModel.getToken());
+                        return result;
+                    } else {
+                        result.setSuccess(false);
+                        result.setMessage("添加失败");
+                        result.setData(tokenModel.getToken());
+                        return result;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -155,12 +138,12 @@ public class CommodityApi {
                     }
                     model.setBusid(byToken.getData().getAccount());
                     ResponseResult update = service.update(model);
-                    if(update.isSuccess()){
+                    if (update.isSuccess()) {
                         result.setSuccess(true);
                         result.setMessage("修改成功");
                         result.setData("}" + tokenModel.getToken());
                         return result;
-                    }else {
+                    } else {
                         result.setSuccess(false);
                         result.setMessage("修改失败");
                         result.setData(tokenModel.getToken());
@@ -173,13 +156,13 @@ public class CommodityApi {
                     result.setData(tokenModel.getToken());
                     return result;
                 }
-            }else {
+            } else {
                 result.setSuccess(false);
                 result.setData(s);
                 result.setMessage("系统繁忙，请稍后再试");
                 return result;
             }
-        }else {
+        } else {
             result.setSuccess(false);
             result.setMessage("令牌已过期，请重新登陆");
             return result;
@@ -214,10 +197,10 @@ public class CommodityApi {
                     if (page.isSuccess()) {
                         String jsonlist = objectMapper.writeValueAsString(page.getData());
                         result.setSuccess(true);
-                        result.setData(jsonlist+tokenModel.getToken());
+                        result.setData(jsonlist + tokenModel.getToken());
                         result.setMessage("成功");
                         return result;
-                    }else {
+                    } else {
                         result.setSuccess(false);
                         result.setData(tokenModel.getToken());
                         result.setMessage("未查询到相关数据");
@@ -230,21 +213,21 @@ public class CommodityApi {
                     result.setMessage("未查询到相关数据");
                     return result;
                 }
-            }else {
+            } else {
                 result.setSuccess(false);
                 result.setData(token);
                 result.setMessage("系统繁忙，请稍后再试");
                 return result;
             }
-        }else {
+        } else {
             result.setSuccess(false);
             result.setMessage("令牌已过期，请重新登陆");
             return result;
         }
     }
 
-    @RequestMapping(value = "/del/{uuid}",method = RequestMethod.GET)
-    public ResponseResult del(@PathVariable String uuid,@RequestParam("token")String token){
+    @RequestMapping(value = "/del/{uuid}", method = RequestMethod.GET)
+    public ResponseResult del(@PathVariable String uuid, @RequestParam("token") String token) {
         ObjectMapper objectMapper = new ObjectMapper();
         ResponseResult<String> result = new ResponseResult<>();
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token);
@@ -267,24 +250,24 @@ public class CommodityApi {
                     return result;
                 }
                 ResponseResult del = service.del(uuid);
-                if(del.isSuccess()){
+                if (del.isSuccess()) {
                     result.setSuccess(true);
-                    result.setData("}"+tokenModel.getToken());
+                    result.setData("}" + tokenModel.getToken());
                     result.setMessage("删除成功");
                     return result;
-                }else {
+                } else {
                     result.setSuccess(false);
                     result.setData(tokenModel.getToken());
                     result.setMessage("删除失败");
                     return result;
                 }
-            }else {
+            } else {
                 result.setSuccess(false);
                 result.setData(token);
                 result.setMessage("系统繁忙，请稍后再试");
                 return result;
             }
-        }else {
+        } else {
             result.setSuccess(false);
             result.setMessage("令牌已过期，请重新登陆");
             return result;

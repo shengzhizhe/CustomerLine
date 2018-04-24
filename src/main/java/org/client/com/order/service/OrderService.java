@@ -2,6 +2,7 @@ package org.client.com.order.service;
 
 import com.github.pagehelper.Page;
 import org.client.com.order.model.OrderModel;
+import org.client.com.shoppingcart.model.ShoppingCart;
 import org.client.com.util.resultJson.ResponseResult;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface OrderService {
 
     List<OrderModel> findByType(String account);
 
-    ResponseResult add(OrderModel model);
+    ResponseResult add(List<ShoppingCart> list);
 
     ResponseResult updateOrDel(String uuid,int type);
 

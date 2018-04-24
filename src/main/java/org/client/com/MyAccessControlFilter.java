@@ -67,11 +67,7 @@ public class MyAccessControlFilter extends AccessControlFilter {
             request.setAttribute(paraName, s);
         }
 
-        String token_str = httpServletRequest.getHeader("Cookie");
-        String[] tokens = token_str.split("token=");
-        token_str = tokens[1];
-        tokens = token_str.split(";");
-        token_str = tokens[0];
+        String token_str = httpServletRequest.getHeader("token");
         if (token_str == null || token_str.trim().equals("")) {
             log.info("未获取头部信息");
             onLoginFail(response, "非法的请求");

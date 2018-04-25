@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface CommodityService {
 
-    ResponseResult<Page<CommodityModel>> findAllByPage(int pageNow, int pageSize, String lm);
+    ResponseResult<Page<CommodityModel>> findAllByPage(String lm);
 
-    ResponseResult<Page<CommodityModel>> page(int pageNow, int pageSize,String account);
+    ResponseResult<Page<CommodityModel>> page(String account);
 
     ResponseResult<CommodityModel> getByUuid(String uuid);
 

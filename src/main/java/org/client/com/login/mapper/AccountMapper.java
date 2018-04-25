@@ -20,8 +20,8 @@ public interface AccountMapper {
      * @return int
      */
     @Insert({
-            "insert into " + tableName + " (username,password,types) " +
-                    "values (#{model.username},#{model.password},#{model.types})"
+            "insert into " + tableName + " (username,password,types,coding) " +
+                    "values (#{model.username},#{model.password},#{model.types},#{model.coding})"
     })
     int add(@Param("model") LoginModel model);
 

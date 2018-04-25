@@ -22,16 +22,19 @@ public class LoginModel implements Serializable {
     private String yzm;
 //0:user 1:cus 2:admin
     private int types;
+    //商家编码
+    private String coding;
 
     public LoginModel() {
         super();
     }
 
-    public LoginModel(String username, String password, String yzm, int types) {
+    public LoginModel(String username, String password, String yzm, int types, String coding) {
         this.username = username;
         this.password = password;
         this.yzm = yzm;
         this.types = types;
+        this.coding = coding;
     }
 
     public int getTypes() {
@@ -66,12 +69,22 @@ public class LoginModel implements Serializable {
         this.yzm = yzm;
     }
 
+    public String getCoding() {
+        return coding;
+    }
+
+    public void setCoding(String coding) {
+        this.coding = coding;
+    }
+
     @Override
     public String toString() {
         return "LoginModel{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", yzm='" + yzm + '\'' +
+                ", types=" + types +
+                ", coding='" + coding + '\'' +
                 '}';
     }
 }

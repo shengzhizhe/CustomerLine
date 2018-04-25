@@ -3,6 +3,7 @@ package org.client.com.api.account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.client.com.login.model.LoginModel;
 import org.client.com.login.service.AccountService;
+import org.client.com.util.number.NumberServiceImpl;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,8 @@ public class RegisterApi {
 
     @Autowired
     private AccountService service;
+    @Autowired
+    private NumberServiceImpl numberService;
 
     //商家注册
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -48,6 +51,15 @@ public class RegisterApi {
                 result.setMessage("账号重复");
                 return result;
             }else{
+                int number = numberService.getNumber();
+                number++;
+                int i = numberService.updateNumber(number);
+                if(i==0){
+                    result.setSuccess(false);
+                    result.setMessage("商家编码生成失败");
+                    return result;
+                }
+                model.setCoding(String.valueOf(number));
                 model.setTypes(1);
                 ResponseResult<LoginModel> add = service.add(model);
                 if(add.isSuccess()){

@@ -18,4 +18,7 @@ public interface ShoppingCartMapper {
 
     @Delete({"DELETE FROM shoppingcart_table WHERE account = #{account}"})
     int delCart (@Param("account")String account);
+
+    @Delete({"DELETE FROM shoppingcart_table WHERE account = #{account} AND spid = #{spid}"})
+    int delCommodity(@Param("account") String account,@Param("spid") String spid);
 }

@@ -34,12 +34,10 @@ public class CommodityController {
             response = ResponseResult.class,
             httpMethod = "GET")
     @RequestMapping(
-            value = "/commodity/page/{paegNow}/{pageSize}/{lm}",
+            value = "/commodity/page/{lm}",
             method = RequestMethod.GET)
-    public ResponseResult page(@PathVariable(value = "pageNow") int pageNow,
-                               @PathVariable(value = "pageSize") int pageSize,
-                               @PathVariable(value = "lm") String lm) {
-        return service.findAllByPage(pageNow, pageSize, lm);
+    public ResponseResult page(@PathVariable(value = "lm") String lm) {
+        return service.findAllByPage( lm);
     }
 
     @ApiOperation(
@@ -68,7 +66,7 @@ public class CommodityController {
      * @return ResponseResult
      */
     @ApiOperation(
-            value = "根据名称模糊查询",
+            value = "根据类型查询出六个",
             response = ResponseResult.class,
             httpMethod = "GET")
     @RequestMapping(

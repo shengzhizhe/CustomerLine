@@ -66,4 +66,17 @@ public class ShoppingCartController {
     public ResponseResult delCart(@RequestParam("account")String account){
         return service.delCart(account);
     }
+
+    @ApiOperation(
+            value = "删除购物车中的某件商品",
+            response = ResponseResult.class,
+            httpMethod = "GET")
+    @RequestMapping(
+            value = "/delCommodity/{account}/{spid}",
+            method = RequestMethod.GET)
+    public ResponseResult delCommodity(
+            @RequestParam("account")String account,
+            @RequestParam("spid")String spid){
+        return service.delCommodity(account,spid);
+    }
 }

@@ -13,4 +13,6 @@ public interface ShoppingCartService {
     ResponseResult creatOrder(String account);
 
     ResponseResult delCart(String account);
+
+    ResponseResult delCommodity(String account,String spid);
 }

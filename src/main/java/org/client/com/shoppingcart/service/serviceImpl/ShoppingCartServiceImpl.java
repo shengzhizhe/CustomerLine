@@ -134,4 +134,35 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
         return result;
     }
+
+    @Override
+    public ResponseResult delCommodity(String account, String spid) {
+        ResponseResult<String> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account+"",
+                result.getCode(),
+                null));
+        int i = mapper.delCommodity(account,spid);
+        if(i == 1){
+            result.setSuccess(true);
+            result.setMessage("已移除");
+        }else {
+            result.setSuccess(false);
+            result.setMessage("未移除成功，请稍后再试");
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account+"",
+                result.getCode(),
+                null));
+
+        return result;
+    }
+
+
 }

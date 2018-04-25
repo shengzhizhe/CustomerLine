@@ -192,7 +192,7 @@ public class CommodityApi {
                     result.setMessage("令牌生成错误,请重新登录");
                     return result;
                 }
-                ResponseResult<Page<CommodityModel>> page = service.page(pageNow, pageSize, byToken.getData().getAccount());
+                ResponseResult<Page<CommodityModel>> page = service.page( byToken.getData().getAccount());
                 try {
                     if (page.isSuccess()) {
                         String jsonlist = objectMapper.writeValueAsString(page.getData());

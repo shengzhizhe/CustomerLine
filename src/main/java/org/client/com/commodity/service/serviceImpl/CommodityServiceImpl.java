@@ -36,16 +36,15 @@ public class CommodityServiceImpl implements CommodityService {
     private CommodityMapper mapper;
 
     @Override
-    public ResponseResult<Page<CommodityModel>> findAllByPage(int pageNow, int pageSize, String lm) {
+    public ResponseResult<Page<CommodityModel>> findAllByPage(String lm) {
         ResponseResult<Page<CommodityModel>> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
-                pageNow + ":" + pageSize + ":" + lm,
+                 ":" + lm,
                 result.getCode(),
                 null));
-        PageHelper.startPage(pageNow, pageSize);
         Page<CommodityModel> allByPage = mapper.findAllByPage(lm);
         result.setSuccess(true);
         result.setData(allByPage);
@@ -54,23 +53,22 @@ public class CommodityServiceImpl implements CommodityService {
                 2,
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
-                pageNow + ":" + pageSize + ":" + lm,
+                ":" + lm,
                 result.getCode(),
                 null));
         return result;
     }
 
     @Override
-    public ResponseResult<Page<CommodityModel>> page(int pageNow, int pageSize,String account) {
+    public ResponseResult<Page<CommodityModel>> page(String account) {
         ResponseResult<Page<CommodityModel>> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
-                pageNow + ":" + pageSize ,
+                "" ,
                 result.getCode(),
                 null));
-        PageHelper.startPage(pageNow, pageSize);
         Page<CommodityModel> all = mapper.findAll(account);
         if(all.size()>0){
             result.setSuccess(true);
@@ -85,7 +83,7 @@ public class CommodityServiceImpl implements CommodityService {
                 2,
                 serviceName,
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
-                pageNow + ":" + pageSize ,
+                "",
                 result.getCode(),
                 null));
         return result;

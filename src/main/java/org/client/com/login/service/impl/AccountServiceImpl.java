@@ -161,6 +161,7 @@ public class AccountServiceImpl implements AccountService {
         return result;
     }
 
+
     @Override
     public ResponseResult<LoginModel> getByAccount2(String account, String types) {
         int type = 0;
@@ -170,13 +171,39 @@ public class AccountServiceImpl implements AccountService {
             type = 2;
         ResponseResult<LoginModel> result = new ResponseResult<>();
         JDBC jdbc = new JDBC();
-        List<LoginModel> models = jdbc.queryToken2("select * from account_table where username = '" + account + "'" +
+        List<LoginModel> models = jdbc.queryToken2("select username,password,types,coding from account_table where username = '" + account + "'" +
                 " and types = " + type);
         if (models.size() > 0) {
             result.setSuccess(true);
             result.setData(models.get(0));
         } else
             result.setSuccess(false);
+        return result;
+    }
+
+    @Override
+    public ResponseResult<LoginModel> getByCoding(String account) {
+        ResponseResult<LoginModel> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                200,
+                null));
+        LoginModel model = mapper.getByCoding(account);
+        if (model != null) {
+            result.setSuccess(true);
+            result.setData(model);
+        } else {
+            result.setSuccess(false);
+            result.setData(null);
+        }
+        logger.info(Sl4jToString.info(2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                result.toString(),
+                result.getCode(),
+                result.getMessage()));
         return result;
     }
 

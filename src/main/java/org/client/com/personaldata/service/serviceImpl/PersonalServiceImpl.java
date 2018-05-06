@@ -211,4 +211,56 @@ public class PersonalServiceImpl implements PersonalService {
                 null));
         return result;
     }
+
+    @Override
+    public ResponseResult<String> updateAddress(String account, String address) {
+        ResponseResult<String> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        int i = mapper.updateAddress(account,address);
+        if (i == 1) {
+            result.setSuccess(true);
+            result.setMessage(null);
+        } else {
+            result.setSuccess(false);
+            result.setMessage("未获取到数据");
+        }
+        logger.info(Sl4jToString.info(2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        return result;
+    }
+    @Override
+    public ResponseResult<String> updatePhone(String account, String phone) {
+        ResponseResult<String> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        int i = mapper.updatePhone(account,phone);
+        if (i == 1) {
+            result.setSuccess(true);
+            result.setMessage(null);
+        } else {
+            result.setSuccess(false);
+            result.setMessage("未获取到数据");
+        }
+        logger.info(Sl4jToString.info(2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                account,
+                result.getCode(),
+                null));
+        return result;
+    }
+
 }

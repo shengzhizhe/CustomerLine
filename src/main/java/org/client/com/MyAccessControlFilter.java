@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -68,6 +69,9 @@ public class MyAccessControlFilter extends AccessControlFilter {
         }
 
         String token_str = httpServletRequest.getHeader("token");
+//        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
+//        Cookie cookie = cookies[0];
+//        String token_str = cookie.getValue();
         if (token_str == null || token_str.trim().equals("")) {
             log.info("未获取头部信息");
             onLoginFail(response, "非法的请求");
@@ -88,24 +92,30 @@ public class MyAccessControlFilter extends AccessControlFilter {
 
 //        废弃原有令牌
         TokenService tokenService = new TokenServiceImpl();
-        ResponseResult<TokenModel> result1 = tokenService.updateToken2(token_str);
-        if (result1.isSuccess()) {
-//        新的token
-//        保存进库
-            TokenModel tokenModel = new TokenModel();
-            tokenModel.setEndTimes(System.currentTimeMillis() * (1000 * 60 * 60 * 24));
-            tokenModel.setIsUse("N");
-            tokenModel.setToken(GetUuid.getUUID());
-            tokenModel.setUuid(GetUuid.getUUID());
-            ResponseResult<TokenModel> result = tokenService.add2(tokenModel);
-            if (result.isSuccess()) {
-                HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-                httpServletResponse.setHeader("Access-Control-Expose-Headers", "token");
-                httpServletResponse.setHeader("token", tokenModel.getToken());
-                return true;
-            } else
+        ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
+        if(byToken.getData()!=null){
+            ResponseResult<TokenModel> result1 = tokenService.updateToken2(token_str);
+            if (result1.isSuccess()) {
+    //        新的token
+    //        保存进库
+                TokenModel tokenModel = new TokenModel();
+                tokenModel.setEndTimes(System.currentTimeMillis() * (1000 * 60 * 60 * 24));
+                tokenModel.setIsUse("N");
+                tokenModel.setAccount(byToken.getData().getAccount());
+                tokenModel.setToken(GetUuid.getUUID());
+                tokenModel.setUuid(GetUuid.getUUID());
+                ResponseResult<TokenModel> result = tokenService.add2(tokenModel);
+                if (result.isSuccess()) {
+                    HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+                    httpServletResponse.setHeader("Access-Control-Expose-Headers", "token");
+                    httpServletResponse.setHeader("token", tokenModel.getToken());
+                    return true;
+                } else
+                    return false;
+            } else {
                 return false;
-        } else {
+            }
+        }else {
             return false;
         }
     }

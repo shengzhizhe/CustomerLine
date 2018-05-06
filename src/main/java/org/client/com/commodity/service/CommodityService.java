@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CommodityService {
 
-    ResponseResult<Page<CommodityModel>> findAllByPage(String lm);
+    ResponseResult<Page<CommodityModel>> findAllByPage(String lm,String account);
 
     ResponseResult<Page<CommodityModel>> page(String account);
 
@@ -17,9 +17,9 @@ public interface CommodityService {
     ResponseResult add(CommodityModel model);
     ResponseResult del(String uuid);
 
-    ResponseResult<List<CommodityModel>> getByName(String name);
+    ResponseResult<List<CommodityModel>> getByName(String name,String account);
 
-    List<CommodityModel> findSixByLm (String lm);
+    List<CommodityModel> findSixByLm (String lm,String account);
 
     ResponseResult update(CommodityModel model);
 

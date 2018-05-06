@@ -12,6 +12,7 @@ import java.util.List;
 public interface OrderSpService {
 
     ResponseResult<Page<OrderSpModel>> page (int pageNum, int pageSize, String orid);
+    ResponseResult<Page<OrderSpModel>> page1 (String orid);
 
     int update(OrderSpModel model);
 

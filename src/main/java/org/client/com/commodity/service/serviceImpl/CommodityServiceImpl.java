@@ -36,7 +36,7 @@ public class CommodityServiceImpl implements CommodityService {
     private CommodityMapper mapper;
 
     @Override
-    public ResponseResult<Page<CommodityModel>> findAllByPage(String lm) {
+    public ResponseResult<Page<CommodityModel>> findAllByPage(String lm,String account) {
         ResponseResult<Page<CommodityModel>> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -45,7 +45,7 @@ public class CommodityServiceImpl implements CommodityService {
                  ":" + lm,
                 result.getCode(),
                 null));
-        Page<CommodityModel> allByPage = mapper.findAllByPage(lm);
+        Page<CommodityModel> allByPage = mapper.findAllByPage(lm,account);
         result.setSuccess(true);
         result.setData(allByPage);
         result.setMessage("成功");
@@ -171,7 +171,7 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
-    public ResponseResult<List<CommodityModel>> getByName(String name) {
+    public ResponseResult<List<CommodityModel>> getByName(String name,String account) {
         ResponseResult<List<CommodityModel>> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -181,7 +181,7 @@ public class CommodityServiceImpl implements CommodityService {
                 result.getCode(),
                 null));
         name = "%"+name+"%";
-        List<CommodityModel> allByPage = mapper.getByName(name);
+        List<CommodityModel> allByPage = mapper.getByName(name,account);
         if(allByPage.size()>0){
             result.setSuccess(true);
             result.setData(allByPage);
@@ -201,8 +201,8 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
-    public List<CommodityModel> findSixByLm(String lm) {
-        List<CommodityModel> sixByLm = mapper.findSixByLm(lm);
+    public List<CommodityModel> findSixByLm(String lm,String account) {
+        List<CommodityModel> sixByLm = mapper.findSixByLm(lm,account);
         return sixByLm;
     }
 
@@ -257,6 +257,4 @@ public class CommodityServiceImpl implements CommodityService {
                 null));
         return result;
     }
-
-
 }

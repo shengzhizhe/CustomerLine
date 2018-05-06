@@ -20,6 +20,12 @@ public class OrderSpModel implements Serializable {
     private String spsl;
     //    购买时单价
     private String spdj;
+    //商品单位
+    private String dw;
+    //商品规格
+    private String ge;
+    //商品品牌
+    private String pp;
     //    购买时总价
     private String spzj;
     //    订单id
@@ -83,15 +89,42 @@ public class OrderSpModel implements Serializable {
         this.zt = zt;
     }
 
+    public String getDw() {
+        return dw;
+    }
+
+    public void setDw(String dw) {
+        this.dw = dw;
+    }
+
+    public String getGe() {
+        return ge;
+    }
+
+    public void setGe(String ge) {
+        this.ge = ge;
+    }
+
+    public String getPp() {
+        return pp;
+    }
+
+    public void setPp(String pp) {
+        this.pp = pp;
+    }
+
     public OrderSpModel() {
         super();
     }
 
-    public OrderSpModel(String uuid, String spid, String spsl, String spdj, String spzj, String orderid, String zt) {
+    public OrderSpModel(String uuid, String spid, String spsl, String spdj, String dw, String ge, String pp, String spzj, String orderid, String zt) {
         this.uuid = uuid;
         this.spid = spid;
         this.spsl = spsl;
         this.spdj = spdj;
+        this.dw = dw;
+        this.ge = ge;
+        this.pp = pp;
         this.spzj = spzj;
         this.orderid = orderid;
         this.zt = zt;
@@ -104,6 +137,9 @@ public class OrderSpModel implements Serializable {
                 ", spid='" + spid + '\'' +
                 ", spsl='" + spsl + '\'' +
                 ", spdj='" + spdj + '\'' +
+                ", dw='" + dw + '\'' +
+                ", ge='" + ge + '\'' +
+                ", pp='" + pp + '\'' +
                 ", spzj='" + spzj + '\'' +
                 ", orderid='" + orderid + '\'' +
                 ", zt='" + zt + '\'' +

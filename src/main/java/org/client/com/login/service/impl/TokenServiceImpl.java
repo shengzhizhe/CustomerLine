@@ -1,5 +1,6 @@
 package org.client.com.login.service.impl;
 
+import org.client.com.login.mapper.AccountMapper;
 import org.client.com.login.mapper.TokenMapper;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
@@ -9,24 +10,26 @@ import org.client.com.util.sl4j.Sl4jToString;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 @Transactional
 public class TokenServiceImpl implements TokenService {
 
-    private static Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(TokenServiceImpl.class);
 
     @Value("${spring.application.name}")
     private String serviceName;
 
-    @Autowired
+    @Resource
     private TokenMapper mapper;
+    @Resource
+    private AccountMapper mapper1;
 
     @Override
     public ResponseResult<TokenModel> add(TokenModel model) {
@@ -110,7 +113,7 @@ public class TokenServiceImpl implements TokenService {
                 token,
                 200,
                 null));
-        TokenModel model = this.mapper.getByToken(token);
+        TokenModel model = mapper.getByToken(token);
         if (model != null) {
             result.setSuccess(true);
             result.setData(model);

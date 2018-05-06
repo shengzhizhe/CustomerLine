@@ -54,4 +54,22 @@ public interface PersonalService {
      * @return ResponseResult<PersonalModel>
      */
     ResponseResult<PersonalModel> getByAccount(String account);
+
+    /**
+     * 根据个人账号更改地址
+     *
+     * @param account String 账户名称
+     * @param address String 地址
+     * @return ResponseResult<PersonalModel>
+     */
+    ResponseResult<String> updateAddress(String account,String address);
+
+    /**
+     * 根据个人账号更改地址
+     *
+     * @param account String 账户名称
+     * @param phone String 电话
+     * @return ResponseResult<PersonalModel>
+     */
+    ResponseResult<String> updatePhone(String account,String phone);
 }

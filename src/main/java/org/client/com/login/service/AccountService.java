@@ -44,6 +44,14 @@ public interface AccountService {
     ResponseResult<LoginModel> getByAccount2(String account, String types);
 
     /**
+     * 根据用户账户的绑定号码获取商家实体
+     *
+     * @param account
+     * @return
+     */
+    ResponseResult<LoginModel> getByCoding(String account);
+
+    /**
      * 根据类型获取账户
      *
      * @return

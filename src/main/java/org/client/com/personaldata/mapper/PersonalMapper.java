@@ -101,4 +101,28 @@ public interface PersonalMapper {
             "select * from " + tableName + " where nickname = #{nickname}"
     })
     PersonalModel getByNickname(@Param("nickname") String nickname);
+
+    /**
+     * 根据账户修改地址
+     *
+     * @param account String 个人账号
+     * @param address String 地址
+     * @return int >= 0 操作成功
+     */
+    @Update({
+            "update " + tableName + " set address=#{address} where account = #{account}"
+    })
+    int updateAddress(@Param("account") String account,@Param("address")String address);
+
+    /**
+     * 根据账户修改地址
+     *
+     * @param account String 个人账号
+     * @param phone String 电话
+     * @return int >= 0 操作成功
+     */
+    @Update({
+            "update " + tableName + " set phone=#{phone} where account = #{account}"
+    })
+    int updatePhone(@Param("account") String account,@Param("phone")String phone);
 }

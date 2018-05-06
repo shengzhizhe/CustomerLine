@@ -6,6 +6,10 @@ import org.client.com.category.model.CategoryModel;
 import org.client.com.category.service.CategoryService;
 import org.client.com.commodity.model.CommodityModel;
 import org.client.com.commodity.service.CommodityService;
+import org.client.com.login.model.LoginModel;
+import org.client.com.login.model.TokenModel;
+import org.client.com.login.service.AccountService;
+import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +32,10 @@ public class CommodityController {
     private CommodityService service;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private TokenService tokenService;
+    @Autowired
+    private AccountService accountService;
 
     public CommodityController() {
     }
@@ -36,8 +47,16 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/page/{lm}",
             method = RequestMethod.GET)
-    public ResponseResult page(@PathVariable(value = "lm") String lm) {
-        return service.findAllByPage( lm);
+    public ResponseResult page(@PathVariable(value = "lm") String lm,ServletRequest request) {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
+        Cookie cookie = cookies[0];
+        String value = cookie.getValue();
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String account = byToken.getData().getAccount();
+        ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
+        String username = byAccount.getData().getUsername();
+        return service.findAllByPage( lm,username);
     }
 
     @ApiOperation(
@@ -58,8 +77,16 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/getByName/{name}",
             method = RequestMethod.GET)
-    public ResponseResult getByName(@PathVariable(value = "name") String name) {
-        return service.getByName(name);
+    public ResponseResult getByName(@PathVariable(value = "name") String name,ServletRequest request) {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
+        Cookie cookie = cookies[0];
+        String value = cookie.getValue();
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String account = byToken.getData().getAccount();
+        ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
+        String username = byAccount.getData().getUsername();
+        return service.getByName(name,username);
     }
 
     /**
@@ -72,12 +99,20 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/findSixByLm",
             method = RequestMethod.GET)
-    public ResponseResult findSixByLm() {
+    public ResponseResult findSixByLm(ServletRequest request) {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
+        Cookie cookie = cookies[0];
+        String value = cookie.getValue();
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String account = byToken.getData().getAccount();
+        ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
+        String username = byAccount.getData().getUsername();
         ResponseResult<List<List<CommodityModel>>> result = new ResponseResult<>();
         List<CategoryModel> all = categoryService.findAll();
         ArrayList<List<CommodityModel>> list = new ArrayList<>();
         for (CategoryModel c:all){
-            List<CommodityModel> sixByLm = service.findSixByLm(c.getId());
+            List<CommodityModel> sixByLm = service.findSixByLm(c.getId(),username);
             if(sixByLm.size()>0){
                 list.add(sixByLm);
             }else {

@@ -47,6 +47,17 @@ public interface AccountMapper {
             "select * from " + tableName + " where username = #{username}"
     })
     LoginModel getByUsername(@Param("username") String username);
+    /**
+     * 根据username获取实体
+     *
+     * @param username String
+     * @return AccountModel
+     */
+    @Select({
+            "select a.username,a.`password`,a.types,a.coding from account_table a WHERE a.coding = ( SELECT coding FROM " +
+                    "account_table WHERE username = #{username}) AND types = 1"
+    })
+    LoginModel getByCoding(@Param("username") String username);
 
     /**
      * 获取所有的指定类型的账户

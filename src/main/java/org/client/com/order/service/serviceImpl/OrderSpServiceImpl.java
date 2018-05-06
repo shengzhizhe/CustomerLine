@@ -54,6 +54,34 @@ public class OrderSpServiceImpl implements OrderSpService {
     }
 
     @Override
+    public ResponseResult<Page<OrderSpModel>> page1(String orid) {
+        ResponseResult<Page<OrderSpModel>> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                orid,
+                result.getCode(),
+                null));
+        Page<OrderSpModel> page = mapper.page(orid);
+        if(page.size()>0){
+            result.setSuccess(true);
+            result.setData(page);
+        }else{
+            result.setSuccess(false);
+            result.setMessage("未查询到数据");
+        }
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                orid,
+                result.getCode(),
+                null));
+        return result;
+    }
+
+    @Override
     public int update(OrderSpModel model) {
 //        OrderSpDao dao = new OrderSpDaoImpl();
 //        StringJoiner sql = new StringJoiner("");

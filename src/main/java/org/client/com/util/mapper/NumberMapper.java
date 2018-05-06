@@ -1,4 +1,4 @@
-package org.client.com.util.number;
+package org.client.com.util.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

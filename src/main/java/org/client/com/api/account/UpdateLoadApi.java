@@ -11,12 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.logging.Logger;
 
 @Api(value = "update", description = "上传")
 @RestController
-@RequestMapping(value = "/upload")
+@RequestMapping(value = "/api/upload")
 public class UpdateLoadApi {
     private static Logger logger = Logger.getLogger(UpdateLoadApi.class.toString());
     @Autowired
@@ -30,11 +31,11 @@ public class UpdateLoadApi {
             httpMethod = "POST")
     @ResponseBody
     @RequestMapping(
-            value = "/update",
+            value = "/upload",
             method = RequestMethod.POST)
-    public ResponseResult upload(@RequestParam("file") MultipartFile file,
-                                 @RequestParam("spid") String spid,
-                                 @RequestParam("token") String token) {
+    public ResponseResult upload(HttpServletRequest request,
+                                 @RequestParam("fileName")MultipartFile fileName) {
+        String token = request.getParameter("token");
         ResponseResult<String> result = new ResponseResult<>();
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token);
         TokenModel tokenModel = new TokenModel();
@@ -56,31 +57,31 @@ public class UpdateLoadApi {
                     return result;
                 }
                 try {
-                    if (file.isEmpty()) {
+                    if (fileName.isEmpty()) {
                         result.setSuccess(false);
                         result.setData("}" + tokenModel.getToken());
                         result.setMessage("文件为空");
                         return result;
                     }
                     // 获取文件名
-                    String fileName = file.getOriginalFilename();
-                    logger.info("上传的文件名为：" + fileName);
+                    logger.info("上传的文件名为：" + fileName.getOriginalFilename());
                     // 获取文件的后缀名
-                    String suffixName = fileName.substring(fileName.lastIndexOf("."));
-                    logger.info("文件的后缀名为：" + suffixName);
+//                    String suffixName = fileName.substring(fileName.lastIndexOf("."));
+//                    logger.info("文件的后缀名为：" + suffixName);
 
                     // 设置文件存储路径
-                    String filePath = "D://aim//";
-                    String path = filePath + fileName + suffixName;
+                    String filePath = "D://img//";
+                    String na = fileName.getOriginalFilename();
+                    String path = filePath + GetUuid.getUUID()+"."+na.substring(na.lastIndexOf(".") + 1);
 
                     File dest = new File(path);
                     // 检测是否存在目录
                     if (!dest.getParentFile().exists()) {
                         dest.getParentFile().mkdirs();// 新建文件夹
                     }
-                    file.transferTo(dest);// 文件写入
+                    fileName.transferTo(dest);// 文件写入
                     result.setSuccess(true);
-                    result.setData(fileName + "}" + tokenModel.getToken());
+                    result.setData(path + "}" + tokenModel.getToken());
                     result.setMessage("上传成功");
                     return result;
                 } catch (Exception e) {
@@ -97,7 +98,6 @@ public class UpdateLoadApi {
                 return result;
             }
         } else
-
         {
             result.setSuccess(false);
             result.setMessage("令牌过期，请重新登陆");
@@ -105,3 +105,4 @@ public class UpdateLoadApi {
         }
     }
 }
+

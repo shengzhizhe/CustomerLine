@@ -4,15 +4,16 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
-import org.client.com.order.model.OrderModel;
 import org.client.com.order.service.OrderService;
 import org.client.com.order.service.OrderSpService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletRequest;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -34,10 +35,8 @@ public class OrderController {
     @GetMapping(value = "/order/findAllByAccount")
     public ResponseResult findAllByAccount(ServletRequest request){
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        Cookie cookie = cookies[0];
-        String value = cookie.getValue();
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String token_str = httpServletRequest.getHeader("token");
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         return service.findAllByAccount(account);
     }

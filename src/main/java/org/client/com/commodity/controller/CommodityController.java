@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletRequest;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,10 +48,8 @@ public class CommodityController {
             method = RequestMethod.GET)
     public ResponseResult page(@PathVariable(value = "lm") String lm,ServletRequest request) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        Cookie cookie = cookies[0];
-        String value = cookie.getValue();
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String token_str = httpServletRequest.getHeader("token");
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
         String username = byAccount.getData().getUsername();
@@ -79,10 +76,8 @@ public class CommodityController {
             method = RequestMethod.GET)
     public ResponseResult getByName(@PathVariable(value = "name") String name,ServletRequest request) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        Cookie cookie = cookies[0];
-        String value = cookie.getValue();
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String token_str = httpServletRequest.getHeader("token");
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
         String username = byAccount.getData().getUsername();
@@ -101,10 +96,8 @@ public class CommodityController {
             method = RequestMethod.GET)
     public ResponseResult findSixByLm(ServletRequest request) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        Cookie cookie = cookies[0];
-        String value = cookie.getValue();
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String token_str = httpServletRequest.getHeader("token");
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
         String username = byAccount.getData().getUsername();

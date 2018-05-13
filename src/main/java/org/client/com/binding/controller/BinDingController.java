@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletRequest;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 @Api(value = "binding",description = "用户绑定商家")
@@ -33,10 +32,8 @@ public class BinDingController {
             method = RequestMethod.GET)
     public ResponseResult update(@PathVariable String conding,ServletRequest request){
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
-        Cookie cookie = cookies[0];
-        String value = cookie.getValue();
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(value);
+        String token_str = httpServletRequest.getHeader("token");
+        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         return service.updateConding(conding,account);
     }

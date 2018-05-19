@@ -12,13 +12,15 @@ import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -114,5 +116,34 @@ public class CommodityController {
         }
         result.setData(list);
         return result;
+    }
+
+    /**
+     * IO流读取图片 by:long
+     * @return
+     */
+    @RequestMapping(value = "/IoReadImage/{imgName}", method = RequestMethod.GET)
+    public void IoReadImage(@PathVariable String imgName,HttpServletRequest request,HttpServletResponse response) throws IOException {
+        ServletOutputStream out = null;
+        FileInputStream ips = null;
+        try {
+            //获取图片存放路径
+            String imgPath = request.getSession().getServletContext().getRealPath("/") + imgName;
+            ips = new FileInputStream(new File(imgPath));
+            response.setContentType("multipart/form-data");
+            out = response.getOutputStream();
+            //读取文件流
+            int len = 0;
+            byte[] buffer = new byte[1024 * 10];
+            while ((len = ips.read(buffer)) != -1){
+                out.write(buffer,0,len);
+            }
+            out.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            out.close();
+            ips.close();
+        }
     }
 }

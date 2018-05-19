@@ -6,13 +6,13 @@ import org.client.com.commodity.service.CommodityService;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
+import org.client.com.util.upload.UploadUtils;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.util.logging.Logger;
 
 @Api(value = "update", description = "上传")
@@ -70,18 +70,19 @@ public class UpdateLoadApi {
 //                    logger.info("文件的后缀名为：" + suffixName);
 
                     // 设置文件存储路径
-                    String filePath = "D://img//";
-                    String na = fileName.getOriginalFilename();
-                    String path = filePath + GetUuid.getUUID()+"."+na.substring(na.lastIndexOf(".") + 1);
-
-                    File dest = new File(path);
-                    // 检测是否存在目录
-                    if (!dest.getParentFile().exists()) {
-                        dest.getParentFile().mkdirs();// 新建文件夹
-                    }
-                    fileName.transferTo(dest);// 文件写入
+                    String[] strings = new UploadUtils().uploadFile(request);
+//                    String filePath = "D://img//";
+//                    String na = fileName.getOriginalFilename();
+//                    String path = filePath + GetUuid.getUUID()+"."+na.substring(na.lastIndexOf(".") + 1);
+//
+//                    File dest = new File(path);
+//                    // 检测是否存在目录
+//                    if (!dest.getParentFile().exists()) {
+//                        dest.getParentFile().mkdirs();// 新建文件夹
+//                    }
+//                    fileName.transferTo(dest);// 文件写入
                     result.setSuccess(true);
-                    result.setData(path + "}" + tokenModel.getToken());
+                    result.setData(strings[4] + "}" + tokenModel.getToken());
                     result.setMessage("上传成功");
                     return result;
                 } catch (Exception e) {

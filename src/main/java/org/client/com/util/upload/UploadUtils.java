@@ -3,6 +3,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.client.com.util.uuidUtil.GetUuid;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -206,6 +207,7 @@ public class UploadUtils {
                         String value = item.getString();
                         fields.put(name, value);
                     } else { // 文件域表单元素
+
                         list.add(item);
                     }
                 }
@@ -238,7 +240,7 @@ public class UploadUtils {
                 SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
                 newFileName = df.format(new Date()) + "_" + new Random().nextInt(1000) + "." + fileExt;
             } else {
-                newFileName = fileName + "." + fileExt;
+                newFileName = GetUuid.getUUID() + "." + fileExt;
             }
             // .../basePath/dirName/yyyyMMdd/yyyyMMddHHmmss_xxx.xxx
             fileUrl = saveUrl + newFileName;

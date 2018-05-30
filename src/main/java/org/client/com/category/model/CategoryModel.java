@@ -2,22 +2,9 @@ package org.client.com.category.model;
 
 public class CategoryModel {
     private String id;
-    private String cname;
+    private String cnames;
 
     public CategoryModel() {
-    }
-
-    public CategoryModel(String id, String cname) {
-        this.id = id;
-        this.cname = cname;
-    }
-
-    @Override
-    public String toString() {
-        return "CategoryModel{" +
-                "id='" + id + '\'' +
-                ", cname='" + cname + '\'' +
-                '}';
     }
 
     public String getId() {
@@ -28,11 +15,24 @@ public class CategoryModel {
         this.id = id;
     }
 
-    public String getCname() {
-        return cname;
+    public String getCnames() {
+        return cnames;
     }
 
-    public void setCname(String name) {
-        this.cname = cname;
+    public void setCnames(String cnames) {
+        this.cnames = cnames;
+    }
+
+    public CategoryModel(String id, String cnames) {
+        this.id = id;
+        this.cnames = cnames;
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryModel{" +
+                "id='" + id + '\'' +
+                ", cnames='" + cnames + '\'' +
+                '}';
     }
 }

@@ -2,18 +2,23 @@ package org.client.com.shoppingcart.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.client.com.commodity.model.CommodityModel;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.TokenService;
 import org.client.com.shoppingcart.model.ShoppingCart;
 import org.client.com.shoppingcart.service.ShoppingCartService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @Api(value = "/cart", description = "购物车")
 @RestController
@@ -33,8 +38,8 @@ public class ShoppingCartController {
             method = RequestMethod.GET)
     public ResponseResult add(@PathVariable("spid") String spid,
                               @PathVariable("num") int num,
-                              ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+                              HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
         String account = byToken.getData().getAccount();
@@ -53,8 +58,8 @@ public class ShoppingCartController {
     @RequestMapping(
             value = "/findByAccount",
             method = RequestMethod.GET)
-    public ResponseResult findByAccount(ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    public ResponseResult findByAccount(HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
         String account = byToken.getData().getAccount();
@@ -67,13 +72,13 @@ public class ShoppingCartController {
             httpMethod = "GET")
     @RequestMapping(
             value = "/creatOrder",
-            method = RequestMethod.GET)
-    public ResponseResult creatOrder(ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+            method = RequestMethod.POST)
+    public ResponseResult creatOrder(HttpServletRequest request,@RequestBody List<ShoppingCart> s) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
         String account = byToken.getData().getAccount();
-        return service.creatOrder(account);
+        return service.creatOrder(account,s);
     }
 
     @ApiOperation(
@@ -83,8 +88,8 @@ public class ShoppingCartController {
     @RequestMapping(
             value = "/delCart",
             method = RequestMethod.GET)
-    public ResponseResult delCart(ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    public ResponseResult delCart(HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
         String account = byToken.getData().getAccount();
@@ -99,8 +104,8 @@ public class ShoppingCartController {
             value = "/delCommodity/{account}/{spid}",
             method = RequestMethod.GET)
     public ResponseResult delCommodity(
-            @RequestParam("spid") String spid, ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+            @RequestParam("spid") String spid, HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken2(token_str);
         String account = byToken.getData().getAccount();

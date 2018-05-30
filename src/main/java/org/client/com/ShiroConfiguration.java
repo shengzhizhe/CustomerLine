@@ -80,8 +80,10 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/", "anon");
         filterChainDefinitionMap.put("/api/**", "anon");
+        filterChainDefinitionMap.put("/commodity/IoReadImage/**", "anon");
+        filterChainDefinitionMap.put("/api/account/sj/code/**", "anon");
         //以下临时开启
-        filterChainDefinitionMap.put("/commodity/commodity/findSixByLm", "anon");
+//        filterChainDefinitionMap.put("/commodity/commodity/findSixByLm", "anon");
 //        filterChainDefinitionMap.put("/cargoaddress/**", "anon");
 //        filterChainDefinitionMap.put("/order/**", "anon");
 //        filterChainDefinitionMap.put("/personalData/**", "anon");

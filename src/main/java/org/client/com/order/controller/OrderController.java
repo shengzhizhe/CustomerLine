@@ -33,9 +33,8 @@ public class OrderController {
             response = ResponseResult.class,
             httpMethod = "GET")
     @GetMapping(value = "/order/findAllByAccount")
-    public ResponseResult findAllByAccount(ServletRequest request){
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String token_str = httpServletRequest.getHeader("token");
+    public ResponseResult findAllByAccount(HttpServletRequest request){
+        String token_str = request.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
         return service.findAllByAccount(account);

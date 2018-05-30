@@ -1,5 +1,6 @@
 package org.client.com.shoppingcart.service;
 
+import org.client.com.commodity.model.CommodityModel;
 import org.client.com.shoppingcart.model.ShoppingCart;
 import org.client.com.util.resultJson.ResponseResult;
 
@@ -10,7 +11,7 @@ public interface ShoppingCartService {
 
     ResponseResult<List<ShoppingCart>> findByAccount(String account);
 
-    ResponseResult creatOrder(String account);
+    ResponseResult creatOrder(String account, List<ShoppingCart> s);
 
     ResponseResult delCart(String account);
 

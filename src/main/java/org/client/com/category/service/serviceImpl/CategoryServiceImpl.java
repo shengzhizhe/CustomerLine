@@ -26,7 +26,34 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryMapper mapper;
 
     @Override
-    public List<CategoryModel> findAll() {
+    public ResponseResult<String> findAll() {
+        ResponseResult<String> result = new ResponseResult<>();
+        logger.info(Sl4jToString.info(
+                1,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "",
+                200,
+                null));
+        List<CategoryModel> all = mapper.findAll();
+        String ca = "";
+        for (CategoryModel c:all){
+            ca += c.getCnames()+",";
+        }
+        result.setSuccess(true);
+        result.setData(ca);
+        logger.info(Sl4jToString.info(
+                2,
+                serviceName,
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "",
+                200,
+                null));
+        return result;
+    }
+
+    @Override
+    public List<CategoryModel> findAll2() {
         logger.info(Sl4jToString.info(
                 1,
                 serviceName,

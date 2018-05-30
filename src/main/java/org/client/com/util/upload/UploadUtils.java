@@ -50,7 +50,7 @@ public class UploadUtils {
         // 其中images,flashs,medias,files,对应文件夹名称,对应dirName
         // key文件夹名称
         // value该文件夹内可以上传文件的后缀名
-        extMap.put("images", "gif,jpg,jpeg,png,bmp");
+        extMap.put("img", "gif,jpg,jpeg,png,bmp");
         extMap.put("flashs", "swf,flv");
         extMap.put("medias", "swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb");
         extMap.put("files", "doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2");
@@ -97,7 +97,7 @@ public class UploadUtils {
         String contentType = request.getContentType();
         int contentLength = request.getContentLength();
         // 文件保存目录路径
-        savePath = request.getSession().getServletContext().getRealPath("/") + basePath + "/";
+        savePath = "C:/file/" + basePath + "/";
         // 文件保存目录URL
         saveUrl = request.getContextPath() + "/" + basePath + "/";
         File uploadDir = new File(savePath);

@@ -3,6 +3,8 @@ package org.client.com.api.account;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.Page;
+import org.client.com.category.model.CategoryModel;
+import org.client.com.category.service.CategoryService;
 import org.client.com.commodity.model.CommodityModel;
 import org.client.com.commodity.service.CommodityService;
 import org.client.com.login.model.TokenModel;
@@ -16,6 +18,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -26,6 +29,8 @@ public class CommodityApi {
     private CommodityService service;
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private CategoryService categoryService;
 
     @RequestMapping(value = "/commodity", method = RequestMethod.POST)
     public ResponseResult add(@RequestParam("json") String json) {
@@ -67,6 +72,12 @@ public class CommodityApi {
                     }
                     model.setUuid(GetUuid.getUUID());
                     model.setBusid(byToken.getData().getAccount());
+                    List<CategoryModel> all = categoryService.findAll2();
+                    for(CategoryModel c:all){
+                        if(model.getLm().equals(c.getCnames())){
+                            model.setLm(c.getId());
+                        }
+                    }
                     ResponseResult add = service.add(model);
                     if (add.isSuccess()) {
                         result.setSuccess(true);

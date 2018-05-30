@@ -30,8 +30,8 @@ public class BinDingController {
             httpMethod = "GET")
     @RequestMapping(value = "/binding/update/{conding}",
             method = RequestMethod.GET)
-    public ResponseResult update(@PathVariable String conding,ServletRequest request){
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    public ResponseResult update(@PathVariable String conding,HttpServletRequest request){
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();

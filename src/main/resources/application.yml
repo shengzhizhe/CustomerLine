@@ -13,7 +13,7 @@ spring:
   datasource:
       url: jdbc:mysql://localhost:3306/jpt?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
-      password: root
+      password: cp9*:s.%sf
       driver-class-name: com.mysql.jdbc.Driver
 #     启用控制台颜色
   output:
@@ -57,6 +57,6 @@ pagehelper:
             countSql
   
 #全局上传下载读取文件路径设置
-filesPath: D:\\file\\
+filesPath: C:\\file\\
 #全局文件格式-多个用,(英文)隔开
 filesType: xlsx

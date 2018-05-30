@@ -12,6 +12,7 @@ import org.client.com.login.service.AccountService;
 import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletOutputStream;
@@ -28,7 +29,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/commodity")
 public class CommodityController {
-
+    @Value("${filesPath}")
+    private String filesPath;
     @Autowired
     private CommodityService service;
     @Autowired
@@ -48,8 +50,8 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/page/{lm}",
             method = RequestMethod.GET)
-    public ResponseResult page(@PathVariable(value = "lm") String lm,ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    public ResponseResult page(@PathVariable(value = "lm") String lm,HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
@@ -76,8 +78,8 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/getByName/{name}",
             method = RequestMethod.GET)
-    public ResponseResult getByName(@PathVariable(value = "name") String name,ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    public ResponseResult getByName(@PathVariable(value = "name") String name,HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
         String token_str = httpServletRequest.getHeader("token");
         ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
         String account = byToken.getData().getAccount();
@@ -96,25 +98,25 @@ public class CommodityController {
     @RequestMapping(
             value = "/commodity/findSixByLm",
             method = RequestMethod.GET)
-    public ResponseResult findSixByLm(ServletRequest request) {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String token_str = httpServletRequest.getHeader("token");
-        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
-        String account = byToken.getData().getAccount();
-        ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
-        String username = byAccount.getData().getUsername();
-        ResponseResult<List<List<CommodityModel>>> result = new ResponseResult<>();
-        List<CategoryModel> all = categoryService.findAll();
-        ArrayList<List<CommodityModel>> list = new ArrayList<>();
-        for (CategoryModel c:all){
-            List<CommodityModel> sixByLm = service.findSixByLm(c.getId(),username);
-            if(sixByLm.size()>0){
-                list.add(sixByLm);
-            }else {
-                list.add(new ArrayList<>());
-            }
-        }
-        result.setData(list);
+    public ResponseResult findSixByLm(HttpServletRequest request) {
+        HttpServletRequest httpServletRequest = request;
+//        String token_str = httpServletRequest.getHeader("token");
+//        ResponseResult<TokenModel> byToken = tokenService.getByToken(token_str);
+//        String account = byToken.getData().getAccount();
+//        ResponseResult<LoginModel> byAccount = accountService.getByCoding(account);
+//        String username = byAccount.getData().getUsername();
+        ResponseResult<String> result = new ResponseResult<>();
+//        List<CategoryModel> all = categoryService.findAll();
+//        ArrayList<List<CommodityModel>> list = new ArrayList<>();
+//        for (CategoryModel c:all){
+//            List<CommodityModel> sixByLm = service.findSixByLm(c.getId(),username);
+//            if(sixByLm.size()>0){
+//                list.add(sixByLm);
+//            }else {
+//                list.add(new ArrayList<>());
+//            }
+//        }
+//        result.setData(list);
         return result;
     }
 
@@ -122,13 +124,13 @@ public class CommodityController {
      * IO流读取图片 by:long
      * @return
      */
-    @RequestMapping(value = "/IoReadImage/{imgName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/IoReadImage/{imgName:.+}", method = RequestMethod.GET)
     public void IoReadImage(@PathVariable String imgName,HttpServletRequest request,HttpServletResponse response) throws IOException {
         ServletOutputStream out = null;
         FileInputStream ips = null;
         try {
             //获取图片存放路径
-            String imgPath = request.getSession().getServletContext().getRealPath("/") + imgName;
+            String imgPath = filesPath + imgName;
             ips = new FileInputStream(new File(imgPath));
             response.setContentType("multipart/form-data");
             out = response.getOutputStream();

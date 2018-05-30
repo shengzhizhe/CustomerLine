@@ -1,7 +1,6 @@
 package org.client.com.api.account;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.swagger.annotations.Api;
 import org.client.com.login.model.LoginModel;
 import org.client.com.login.model.TokenModel;
 import org.client.com.login.service.AccountService;
@@ -9,10 +8,7 @@ import org.client.com.login.service.TokenService;
 import org.client.com.util.resultJson.ResponseResult;
 import org.client.com.util.uuidUtil.GetUuid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -35,13 +31,28 @@ public class AccountApi {
     @Autowired
     private TokenService tokenService;
 
+    @RequestMapping(value = "/sj/code/{token}", method = RequestMethod.GET)
+    public ResponseResult<LoginModel> sjCode(@PathVariable("token") String token) {
+        ResponseResult<TokenModel> result = tokenService.getByToken(token);
+        if (result.isSuccess()) {
+//            ResponseResult<LoginModel> result1 =
+                    return accountService.getByAccount(result.getData().getAccount());
+//            if (result1.isSuccess()) {
+//                return new ResponseResult<>(true, "成功", result1.getData().getCoding(), 0);
+//            } else {
+//                return new ResponseResult<>(false, "帐户信息验证失败");
+//            }
+        } else {
+            return new ResponseResult<>(false, "帐户信息验证失败");
+        }
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseResult login(@RequestParam("json") String json) {
         ResponseResult<String> result = new ResponseResult<>();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             LoginModel model = objectMapper.readValue(json, LoginModel.class);
-
             ValidatorFactory vf = Validation.buildDefaultValidatorFactory();
             Validator validator = vf.getValidator();
             Set<ConstraintViolation<LoginModel>> set = validator.validate(model);
@@ -49,7 +60,6 @@ public class AccountApi {
                 result.setSuccess(false);
                 result.setMessage(constraintViolation.getMessage());
                 return result;
-                //System.out.println(constraintViolation.getPropertyPath()+":"+constraintViolation.getMessage());
             }
             //生成新的token
             long times = System.currentTimeMillis() + (1000 * 60 * 60 * 24 * 30);

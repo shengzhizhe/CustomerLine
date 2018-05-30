@@ -1,5 +1,6 @@
 package org.client.com.shoppingcart.service.serviceImpl;
 
+import org.client.com.commodity.model.CommodityModel;
 import org.client.com.order.service.OrderService;
 import org.client.com.order.service.serviceImpl.OrderServiceImpl;
 import org.client.com.shoppingcart.mapper.ShoppingCartMapper;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -81,7 +83,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public ResponseResult creatOrder(String account) {
+    public ResponseResult creatOrder(String account, List<ShoppingCart> s) {
         ResponseResult<String> result = new ResponseResult<>();
         logger.info(Sl4jToString.info(
                 1,
@@ -90,11 +92,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 account+"",
                 result.getCode(),
                 null));
-        ResponseResult<List<ShoppingCart>> byAccount = findByAccount(account);
-        ResponseResult add = service.add(byAccount.getData());
-        if(add.isSuccess()){
-            mapper.delCart(account);
+        for (ShoppingCart ss:s){
+            ss.setAccount(account);
         }
+        ResponseResult add = service.add(s);
         logger.info(Sl4jToString.info(
                 2,
                 serviceName,

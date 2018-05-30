@@ -23,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -101,6 +103,25 @@ public class OrderServiceImpl implements OrderService {
         ResponseResult<CommodityModel> byUuid = commodityService.getByUuid(list.get(0).getSpid());
         OrderModel model = new OrderModel();
         model.setUuid(GetUuid.getUUID());
+        if(byAccount.getData().getAddress()==null||"".equals(byAccount.getData().getAddress().trim())){
+            result.setSuccess(false);
+            result.setMessage("请填写个人资料中的地址");
+            return result;
+        }
+        if(byAccount.getData().getPhone()==null||"".equals(byAccount.getData().getPhone())){
+            result.setSuccess(false);
+            result.setMessage("请填写个人资料中的联系方式");
+            return result;
+        }
+        String regExp = "^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$|^(0\\d{2}-\\d{8}(-\\d{1,4})?)|(0\\d{3}-\\d{7,8}(-\\d{1,4})?)$";
+        Pattern  p = Pattern.compile(regExp);
+        if(!p.matcher(byAccount.getData().getPhone()).matches()){
+            result.setSuccess(false);
+            result.setMessage("请在个人资料中填写正确的联系方式");
+            return result;
+        }
+        model.setAddress(byAccount.getData().getAddress());
+        model.setPhone(byAccount.getData().getPhone());
         Double d = 0.0;
             for (ShoppingCart s : list) {
                 OrderSpModel sp = new OrderSpModel();
@@ -114,8 +135,6 @@ public class OrderServiceImpl implements OrderService {
                 d = d + s.getNumber() * byUuid1.getData().getJg();
                 int i = mapper.addOrderSp(sp);
             }
-        model.setAddress(byAccount.getData().getAddress());
-        model.setPhone(byAccount.getData().getPhone());
         model.setDdbh(String.valueOf(new Date().getTime()));
         model.setCjTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         model.setAccount(list.get(0).getAccount());
